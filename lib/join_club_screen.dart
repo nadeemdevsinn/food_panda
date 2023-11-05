@@ -67,6 +67,7 @@ class JoinClub extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20,right: 20,top: 30),
                 child: Container(
                   child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(width: 10,),
                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAopdUGHQ00uqzTdaRAkwq2kCTPif5ONjF8w&usqp=CAU",height: 60.0,width: 50.0,),
