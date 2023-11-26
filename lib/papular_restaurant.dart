@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_panda/custom_images.dart';
+import 'package:food_panda/share_screen.dart';
 
 import 'custom_icons.dart';
 import 'custom_text.dart';
@@ -15,43 +16,35 @@ class Papular extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+       
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: InkWell(
+            onTap: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>FirstPage()));
+            },
+            child: Icon(Icons.arrow_back,color: Color(0xffe31b70),size: 25.0,)),
+           actions: [
+           Icon(Icons.favorite_border_outlined,color: Color(0xffe31b70),size: 20.0,),SizedBox(width: 10,),Icon(Icons.share_outlined,color: Color(0xffe31b70),size: 20.0,),SizedBox(width: 10,),Icon(Icons.search,color: Color(0xffe31b70),size: 20.0,),SizedBox(width: 10,)
+           ],
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
+              
                Padding(
                  padding: const EdgeInsets.only(left: 20,right: 20,top: 30),
-                 child: Row(
-                                    children: [
-                                      InkWell(
-                                        onTap: () {
-                                          Navigator.push(context,MaterialPageRoute(builder: (context)=>FirstPage()));
-                                        },
-                                        child: CustomIcons(icon: Icons.arrow_back,color: Color(0xffDF486F),size: 35.0,)),
-                                      Spacer(),
-                                       CustomIcons(icon: Icons.heart_broken_outlined,color: Color(0xffDF486F),size: 25.0,),
-                                        SizedBox(width: 30,),
-                                        CustomIcons(icon: Icons.shape_line_outlined,color: Color(0xffDF486F),size: 20.0,),
-                                      
-        
-                                       SizedBox(width: 30,),
-                                        CustomIcons(icon: Icons.search,color: Color(0xffDF486F),size: 30.0,),
-                                
-                                    ],
-                                  ),
-                                  
-               ),
-               Padding(
-                 padding: const EdgeInsets.only(left: 20,right: 20,top: 50),
                  child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
-                     CustomText(text: "KFC-Gulshan E Ravi",fontsize: 20.0,fontweight: FontWeight.bold,),
+                     CustomText(text: "KFC-Gulshan E Ravi",fontsize: 15.0,fontweight: FontWeight.bold,),
                      SizedBox(height: 20,),
                      Row(
                        children: [
                          CustomText(text: "0.8km away Rs.50.00 Delivery",),
                          Spacer(),
-                          CustomText(text: "More info",fontsize: 15.0,color:Color(0xffDF486F) ,),
+                          CustomText(text: "More info",fontsize: 15.0,color:Color(0xffe31b70) ,),
                
                        ],
                      ),
@@ -65,13 +58,13 @@ class Papular extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20,right: 20,top: 30),
                   child: Row(
                          children: [
-                          CustomIcons(icon: Icons.star_border_outlined,size: 30.0,color: Color(0xffDF486F),),
+                          CustomIcons(icon: Icons.star_border_outlined,size: 20.0,color: Color(0xffe31b70),),
                           SizedBox(width: 10,),
-                           CustomText(text: "4.0",fontsize: 20.0,fontweight: FontWeight.bold,),
+                           CustomText(text: "4.0",fontsize: 15.0,fontweight: FontWeight.bold,),
                            SizedBox(width: 10,),
-                             CustomText(text: "5000+ratings",fontsize: 18.0,),
+                             CustomText(text: "5000+ratings",fontsize: 15.0,),
                            Spacer(),
-                            CustomText(text: "See reviews",fontsize: 15.0,color:Color(0xffDF486F) ,),
+                            CustomText(text: "See reviews",fontsize: 15.0,color:Color(0xffe31b70) ,),
                            
                          ],
                        ),
@@ -80,11 +73,11 @@ class Papular extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
                   child: Row(
                          children: [
-                          CustomIcons(icon: Icons.watch_later_outlined,size: 30.0,color: Color(0xffDF486F),),
+                          CustomIcons(icon: Icons.watch_later_outlined,size: 20.0,color: Color(0xffe31b70),),
                           SizedBox(width: 10,),
-                           CustomText(text: "Delivery: 50 min",fontsize: 20.0,fontweight: FontWeight.bold,),
+                           CustomText(text: "Delivery: 50 min",fontsize: 15.0,fontweight: FontWeight.bold,),
                           Spacer(),
-                             CustomText(text: "Change",fontsize: 18.0,color: Colors.black54,),
+                             CustomText(text: "Change",fontsize: 15.0,color: Colors.black54,),
                            
                          ],
                        ),
@@ -93,9 +86,9 @@ class Papular extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
                   child: Row(
                          children: [
-                          CustomIcons(icon: Icons.event_available_outlined,size: 30.0,color: Color(0xffDF486F),),
+                          CustomIcons(icon: Icons.event_available_outlined,size: 20.0,color: Color(0xffe31b70),),
                           SizedBox(width: 10,),
-                           CustomText(text: "Available deals",fontsize: 20.0,fontweight: FontWeight.bold,),
+                           CustomText(text: "Available deals",fontsize: 15.0,fontweight: FontWeight.bold,),
                            
                          ],
                        ),
@@ -110,40 +103,40 @@ class Papular extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              CustomIcons(icon: Icons.circle_sharp,size: 25.0,),
+                              CustomIcons(icon: Icons.circle_sharp,size: 20.0,),
                                 SizedBox(width: 15,),
-                               CustomText(text: "Stemp cards",fontweight: FontWeight.bold,fontsize: 20.0,),
+                               CustomText(text: "Stemp cards",fontweight: FontWeight.bold,fontsize: 15.0,),
                               SizedBox(width: 15,),
                               
                             ],
                           ),
                           SizedBox(height: 15,),
                          
-                            CustomText(text: "Rewards hasil karin",fontsize: 15.0,),
+                            CustomText(text: "Rewards hasil karin",fontsize: 13.0,),
                         ],
                       ),
                     ),
                     height: 100,width: 400,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Colors.cyan),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: const Color.fromARGB(255, 244, 208, 221)),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 20,top: 30),
+                  padding: const EdgeInsets.only(left: 20,top: 30,right: 20),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
+                        CustomText(text: "Popular",fontsize: 15.0,fontweight: FontWeight.bold,),
                         SizedBox(width: 30,),
-                          CustomText(text: "Promotion",fontsize: 25.0,fontweight: FontWeight.bold,),
+                          CustomText(text: "Promotion",fontsize: 15.0,fontweight: FontWeight.bold,),
                         SizedBox(width: 30,),
-                          CustomText(text: "Cricket Deals & Discounts",fontsize: 25.0,fontweight: FontWeight.bold,),
+                          CustomText(text: "Cricket Deals & Discounts",fontsize: 15.0,fontweight: FontWeight.bold,),
                         SizedBox(width: 30,),
-                          CustomText(text: "Strong Pepsi Deals",fontsize: 25.0,fontweight: FontWeight.bold,),
+                          CustomText(text: "Strong Pepsi Deals",fontsize: 15.0,fontweight: FontWeight.bold,),
                         SizedBox(width: 30,),
-                          CustomText(text: "Meal Box",fontsize: 25.0,fontweight: FontWeight.bold,),
+                          CustomText(text: "Meal Box",fontsize: 15.0,fontweight: FontWeight.bold,),
                         SizedBox(width: 30,),
-                          CustomText(text: "Family deals",fontsize: 25.0,fontweight: FontWeight.bold,),
+                          CustomText(text: "Family deals",fontsize: 15.0,fontweight: FontWeight.bold,),
                        
                         
                               
@@ -151,15 +144,15 @@ class Papular extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 15,),
-                Divider(color: Colors.black,thickness: 0,),
+                SizedBox(height: 10,),
+                Divider(color: Colors.grey,thickness: 0,),
                 Padding(
                   padding: const EdgeInsets.only(left: 20,top: 20),
                   child: Row(
                     children: [
                       CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqrDxMAmiUamQ364hHC-gPHmeKoA-5sYvH7H-ezvyDM4LbEH1yJYP9X9yzxMO54sAvtMY&usqp=CAU",height: 30.0,width: 30.0,),
                       SizedBox(width: 20,),
-                      CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
+                      CustomText(text: "Popular",fontsize: 18.0,fontweight: FontWeight.bold,),
                     ],
                   ),
                 ),
@@ -167,267 +160,358 @@ class Papular extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20,top: 20),
                   child: Row(
                     children: [
-                      CustomText(text: "Most ordered right now.",fontsize: 20.0,),
+                      CustomText(text: "Most ordered right now.",fontsize: 15.0,),
                     ],
                   ),
                 ),
-                 SizedBox(height: 40,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+               
+            
+               Padding(
+                   padding: const EdgeInsets.only(left: 20,right: 20,top: 30),
+                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Stack(
+                        children: [
+                            CustomImages(url: "https://5.imimg.com/data5/SELLER/Default/2022/11/HH/OH/BC/31653668/birthday-cake-250x250.jpeg",height: 150.0,width: 160.0,),
+                         
+                         Positioned(
+                          bottom: 10,
+                        left: 10,
+                           child: Container(
+                            child: Center(child: CustomText(text: "Rs.374.75",fontweight: FontWeight.bold,)),
+                           height: 25,width: 130,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 231, 230, 230),),
+                           ),
+                         )
+                 
+                        ],
+                       ),
+                       SizedBox(width: 10,),
+                       Stack(
+                        children: [
+                            CustomImages(url: "https://5.imimg.com/data5/SELLER/Default/2022/11/HH/OH/BC/31653668/birthday-cake-250x250.jpeg",height: 150.0,width: 160.0,),
+                         
+                         Positioned(
+                          bottom: 10,
+                        left: 10,
+                           child: Container(
+                            child: Center(child: CustomText(text: "Rs.374.75",fontweight: FontWeight.bold,)),
+                           height: 25,width: 130,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 231, 230, 230),),
+                           ),
+                         )
+                 
+                        ],
+                       ),
+                     ],
+                   ),
+                 ),
+                  Padding(
+                   padding: const EdgeInsets.only(left: 20,right: 20,top: 15),
+                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Stack(
+                        children: [
+                            CustomImages(url: "https://5.imimg.com/data5/SELLER/Default/2022/11/HH/OH/BC/31653668/birthday-cake-250x250.jpeg",height: 150.0,width: 160.0,),
+                         
+                         Positioned(
+                          bottom: 10,
+                        left: 10,
+                           child: Container(
+                            child: Center(child: CustomText(text: "Rs.374.75",fontweight: FontWeight.bold,)),
+                           height: 25,width: 130,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 231, 230, 230),),
+                           ),
+                         )
+                 
+                        ],
+                       ),
+
+                      SizedBox(width: 10,),
+                       Stack(
+                        children: [
+                            CustomImages(url: "https://5.imimg.com/data5/SELLER/Default/2022/11/HH/OH/BC/31653668/birthday-cake-250x250.jpeg",height: 150.0,width: 160.0,),
+                         
+                         Positioned(
+                          bottom: 10,
+                        left: 10,
+                           child: Container(
+                            child: Center(child: CustomText(text: "Rs.374.75",fontweight: FontWeight.bold,)),
+                           height: 25,width: 130,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 231, 230, 230),),
+                           ),
+                         )
+                 
+                        ],
+                       ),
+                     ],
+                   ),
+                 ),
+                  Padding(
+                   padding: const EdgeInsets.only(left: 20,right: 20,top: 15),
+                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       Stack(
+                        children: [
+                            CustomImages(url: "https://5.imimg.com/data5/SELLER/Default/2022/11/HH/OH/BC/31653668/birthday-cake-250x250.jpeg",height: 150.0,width: 160.0,),
+                         
+                         Positioned(
+                          bottom: 10,
+                        left: 10,
+                           child: Container(
+                            child: Center(child: CustomText(text: "Rs.374.75",fontweight: FontWeight.bold,)),
+                           height: 25,width: 130,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 231, 230, 230),),
+                           ),
+                         )
+                 
+                        ],
+                       ),
+                      SizedBox(width: 10,),
+                       Stack(
+                        children: [
+                            CustomImages(url: "https://5.imimg.com/data5/SELLER/Default/2022/11/HH/OH/BC/31653668/birthday-cake-250x250.jpeg",height: 150.0,width: 160.0,),
+                         
+                         Positioned(
+                          bottom: 10,
+                        left: 10,
+                           child: Container(
+                            child: Center(child: CustomText(text: "Rs.374.75",fontweight: FontWeight.bold,)),
+                           height: 25,width: 130,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: const Color.fromARGB(255, 231, 230, 230),),
+                           ),
+                         )
+                 
+                        ],
+                       ),
+                     ],
+                   ),
+                 ),
+               
+              
+               
+               
+             
+                Column(
+                  
                   children: [
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20,top: 40,right: 20),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(text: "Favorite Combos",fontsize: 18.0,fontweight: FontWeight.bold,),
+                                SizedBox(height: 30,),
+                                 CustomText(text: "Favorite Combos 1",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                  SizedBox(height: 10,),
+                                  CustomText(text: "2 Deals chawal",fontsize: 15.0,),
+                                   SizedBox(height: 25,),
+                                   CustomText(text: "Rs. 280.00",fontsize: 15.0,),
+                                   
+                              ],
+                            ),
+                            Spacer(),
+                            Stack(
+                              children: [
+                                 CircleAvatar(
+                                                               radius: 30,
+                                                               backgroundImage: NetworkImage("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D"),
+                                 ),
+                                 Positioned(
+                                  right: 0,bottom: 5,
+                                   child: Container(
+                                    child: CustomIcons(icon: Icons.add,size: 20.0,color: Colors.white,),
+                                    height: 25,width: 25,
+                                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: Color(0xffe31b70)),
+                                   ),
+                                 )
+                              ],
+                            ),
+    
+                          
+                              
+                           
+                          ],
+                        ),
+                        
+                      ),
+                      height: 210,width: 400,
+                      color: Colors.white,
+                    ),
+                    Divider(color: Colors.grey,thickness: 0,)
                    
-                    CustomImages(url: "https://copykat.com/wp-content/uploads/2019/11/hooters-hot-wings.jpg",height: 150.0,width: 150.0,),
-                    SizedBox(width: 25,),
-                     CustomImages(url: "https://copykat.com/wp-content/uploads/2019/11/hooters-hot-wings.jpg",height: 150.0,width: 150.0,),
-                  ],
-                ),
-                SizedBox(height: 20,),
-                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                   
-                    CustomImages(url: "https://copykat.com/wp-content/uploads/2019/11/hooters-hot-wings.jpg",height: 150.0,width: 150.0,),
-                    SizedBox(width: 25,),
-                     CustomImages(url: "https://copykat.com/wp-content/uploads/2019/11/hooters-hot-wings.jpg",height: 150.0,width: 150.0,),
-                  ],
-                ),
-                 SizedBox(height: 20,),
-                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                   
-                    CustomImages(url: "https://copykat.com/wp-content/uploads/2019/11/hooters-hot-wings.jpg",height: 150.0,width: 150.0,),
-                    SizedBox(width: 25,),
-                     CustomImages(url: "https://copykat.com/wp-content/uploads/2019/11/hooters-hot-wings.jpg",height: 150.0,width: 150.0,),
-                  ],
-                ),
-                SizedBox(height: 20,),
-                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                   
-                    CustomImages(url: "https://copykat.com/wp-content/uploads/2019/11/hooters-hot-wings.jpg",height: 150.0,width: 150.0,),
-                    SizedBox(width: 25,),
-                     CustomImages(url: "https://copykat.com/wp-content/uploads/2019/11/hooters-hot-wings.jpg",height: 150.0,width: 150.0,),
-                  ],
-                ),
-                SizedBox(height: 30,),
-                Column(
-                  
-                  children: [
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(text: "Favorite Combos",fontsize: 30.0,fontweight: FontWeight.bold,),
-                                SizedBox(height: 30,),
-                                 CustomText(text: "Favorite Combos 1",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 10,),
-                                  CustomText(text: "2 Deals chawal",fontsize: 20.0,),
-                                   SizedBox(height: 25,),
-                                   CustomText(text: "Rs. 280.00",fontsize: 20.0,),
-                                   
-                              ],
-                            ),
-    
-                            SizedBox(width: 20,),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 55),
-                              child: CircleAvatar(
-                                radius: 50,
-                                backgroundImage: NetworkImage("https://mommypotamus.com/wp-content/uploads/2016/02/buffalo-wings-recipe-oven-800x533.jpg"),
-                                 ),
-                            ),
-                              
-                           
-                          ],
-                        ),
-                        
-                      ),
-                      height: 210,width: 400,
-                      color: Colors.white,
-                    ),
-                     SizedBox(height: 30,),
-                Column(
-                  
-                  children: [
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(text: "Favorite Combos",fontsize: 30.0,fontweight: FontWeight.bold,),
-                                SizedBox(height: 30,),
-                                 CustomText(text: "Favorite Combos 1",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 10,),
-                                  CustomText(text: "2 Deals chawal",fontsize: 20.0,),
-                                   SizedBox(height: 25,),
-                                   CustomText(text: "Rs. 280.00",fontsize: 20.0,),
-                                   
-                              ],
-                            ),
-    
-                            SizedBox(width: 20,),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 55),
-                              child: CircleAvatar(
-                                radius: 50,
-                                backgroundImage: NetworkImage("https://mommypotamus.com/wp-content/uploads/2016/02/buffalo-wings-recipe-oven-800x533.jpg"),
-                                 ),
-                            ),
-                              
-                           
-                          ],
-                        ),
-                        
-                      ),
-                      height: 210,width: 400,
-                      color: Colors.white,
-                    ),
-                    
-                  ],
-                ),
-                SizedBox(height: 30,),
-                 SizedBox(height: 30,),
-                Column(
-                  
-                  children: [
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(text: "Favorite Combos",fontsize: 30.0,fontweight: FontWeight.bold,),
-                                SizedBox(height: 30,),
-                                 CustomText(text: "Favorite Combos 1",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 10,),
-                                  CustomText(text: "2 Deals chawal",fontsize: 20.0,),
-                                   SizedBox(height: 25,),
-                                   CustomText(text: "Rs. 280.00",fontsize: 20.0,),
-                                   
-                              ],
-                            ),
-    
-                            SizedBox(width: 20,),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 55),
-                              child: CircleAvatar(
-                                radius: 50,
-                                backgroundImage: NetworkImage("https://mommypotamus.com/wp-content/uploads/2016/02/buffalo-wings-recipe-oven-800x533.jpg"),
-                                 ),
-                            ),
-                              
-                           
-                          ],
-                        ),
-                        
-                      ),
-                      height: 210,width: 400,
-                      color: Colors.white,
-                    ),
-                     SizedBox(height: 30,),
-                Column(
-                  
-                  children: [
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(text: "Favorite Combos",fontsize: 30.0,fontweight: FontWeight.bold,),
-                                SizedBox(height: 30,),
-                                 CustomText(text: "Favorite Combos 1",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 10,),
-                                  CustomText(text: "2 Deals chawal",fontsize: 20.0,),
-                                   SizedBox(height: 25,),
-                                   CustomText(text: "Rs. 280.00",fontsize: 20.0,),
-                                   
-                              ],
-                            ),
-    
-                            SizedBox(width: 20,),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 55),
-                              child: CircleAvatar(
-                                radius: 50,
-                                backgroundImage: NetworkImage("https://mommypotamus.com/wp-content/uploads/2016/02/buffalo-wings-recipe-oven-800x533.jpg"),
-                                 ),
-                            ),
-                              
-                           
-                          ],
-                        ),
-                        
-                      ),
-                      height: 210,width: 400,
-                      color: Colors.white,
-                    ),
-                     SizedBox(height: 30,),
-                Column(
-                  
-                  children: [
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
-                        child: Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(text: "Favorite Combos",fontsize: 30.0,fontweight: FontWeight.bold,),
-                                SizedBox(height: 30,),
-                                 CustomText(text: "Favorite Combos 1",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 10,),
-                                  CustomText(text: "2 Deals chawal",fontsize: 20.0,),
-                                   SizedBox(height: 25,),
-                                   CustomText(text: "Rs. 280.00",fontsize: 20.0,),
-                                   
-                              ],
-                            ),
-    
-                            SizedBox(width: 20,),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 55),
-                              child: CircleAvatar(
-                                radius: 50,
-                                backgroundImage: NetworkImage("https://mommypotamus.com/wp-content/uploads/2016/02/buffalo-wings-recipe-oven-800x533.jpg"),
-                                 ),
-                            ),
-                              
-                           
-                          ],
-                        ),
-                        
-                      ),
-                      height: 210,width: 400,
-                      color: Colors.white,
-                    ),
-                    SizedBox(height: 30,)
             ]
-                ),
+        ),
+         Column(
+                  
+                  children: [
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(text: "Favorite Combos",fontsize: 18.0,fontweight: FontWeight.bold,),
+                                SizedBox(height: 30,),
+                                 CustomText(text: "Favorite Combos 1",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                  SizedBox(height: 10,),
+                                  CustomText(text: "2 Deals chawal",fontsize: 15.0,),
+                                   SizedBox(height: 25,),
+                                   CustomText(text: "Rs. 280.00",fontsize: 15.0,),
+                                   
+                              ],
+                            ),
+                            Spacer(),
+                            Stack(
+                              children: [
+                                 CircleAvatar(
+                                                               radius: 30,
+                                                               backgroundImage: NetworkImage("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D"),
+                                 ),
+                                 Positioned(
+                                  right: 0,bottom: 5,
+                                   child: Container(
+                                    child: CustomIcons(icon: Icons.add,size: 20.0,color: Colors.white,),
+                                    height: 25,width: 25,
+                                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: Color(0xffe31b70)),
+                                   ),
+                                 )
+                              ],
+                            ),
+    
+                          
+                              
+                           
+                          ],
+                        ),
+                        
+                      ),
+                      height: 210,width: 400,
+                      color: Colors.white,
+                    ),
+                    Divider(color: Colors.grey,thickness: 0,),
+                     Column(
+                  
+                  children: [
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(text: "Favorite Combos",fontsize: 18.0,fontweight: FontWeight.bold,),
+                                SizedBox(height: 30,),
+                                 CustomText(text: "Favorite Combos 1",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                  SizedBox(height: 10,),
+                                  CustomText(text: "2 Deals chawal",fontsize: 15.0,),
+                                   SizedBox(height: 25,),
+                                   CustomText(text: "Rs. 280.00",fontsize: 15.0,),
+                                   
+                              ],
+                            ),
+                            Spacer(),
+                            Stack(
+                              children: [
+                                 CircleAvatar(
+                                                               radius: 30,
+                                                               backgroundImage: NetworkImage("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D"),
+                                 ),
+                                 Positioned(
+                                  right: 0,bottom: 5,
+                                   child: Container(
+                                    child: CustomIcons(icon: Icons.add,size: 20.0,color: Colors.white,),
+                                    height: 25,width: 25,
+                                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: Color(0xffe31b70)),
+                                   ),
+                                 )
+                              ],
+                            ),
+    
+                          
+                              
+                           
+                          ],
+                        ),
+                        
+                      ),
+                      height: 210,width: 400,
+                      color: Colors.white,
+                    ),
+                    Divider(color: Colors.grey,thickness: 0,)
+                   
             ]
-                ),
-                  ]
-                ),
+        ),
+          Column(
+                  
+                  children: [
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
+                        child: Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                CustomText(text: "Favorite Combos",fontsize: 18.0,fontweight: FontWeight.bold,),
+                                SizedBox(height: 30,),
+                                 CustomText(text: "Favorite Combos 1",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                  SizedBox(height: 10,),
+                                  CustomText(text: "2 Deals chawal",fontsize: 15.0,),
+                                   SizedBox(height: 25,),
+                                   CustomText(text: "Rs. 280.00",fontsize: 15.0,),
+                                   
+                              ],
+                            ),
+                            Spacer(),
+                            Stack(
+                              children: [
+                                 CircleAvatar(
+                                                               radius: 30,
+                                                               backgroundImage: NetworkImage("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D"),
+                                 ),
+                                 Positioned(
+                                  right: 0,bottom: 5,
+                                   child: Container(
+                                    child: CustomIcons(icon: Icons.add,size: 20.0,color: Colors.white,),
+                                    height: 25,width: 25,
+                                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: Color(0xffe31b70)),
+                                   ),
+                                 )
+                              ],
+                            ),
+    
+                          
+                              
+                           
+                          ],
+                        ),
+                        
+                      ),
+                      height: 210,width: 400,
+                      color: Colors.white,
+                    ),
+                   
+                   
+            ]
+        ),
+        SizedBox(height: 20,)
+
             ]
         ),
             ]
-        ),
         )
       ),
+      )
     );
         
     

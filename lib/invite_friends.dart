@@ -17,7 +17,7 @@ class InviteFriends extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 30.0,),
+                SizedBox(height: 20.0,),
                 Row(
                   children: [
                    
@@ -25,32 +25,33 @@ class InviteFriends extends StatelessWidget {
                       onTap: () {
                         Navigator.push(context,MaterialPageRoute(builder: (context)=>FirstPage()));
                       },
-                      child: CustomIcons(icon: Icons.arrow_back,size: 30.0,color: Color(0xffDF486F,),)),
+                      child: CustomIcons(icon: Icons.arrow_back,size: 25.0,color: Color(0xffe31b70),)),
                     Spacer(),
-                    CustomText(text: "How it works",fontsize: 15.0,fontweight: FontWeight.bold,color: Color(0xffDF486F,),),
+                    CustomText(text: "How it works",fontsize: 15.0,fontweight: FontWeight.bold,color: Color(0xffe31b70),),
                   ],
                 ),
+                SizedBox(height: 20,),
                 CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPpL_WliNUO6ClqDyB9IhhB3JcqV-FV9a5cg&usqp=CAU",height: 250.0,width: 350.0,),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10.0,right: 25.0),
+                  padding: const EdgeInsets.only(left: 10.0,right: 25.0,top: 50),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomText(text: "Invite friends, get Rs. 350.00",fontsize: 20.0,fontweight: FontWeight.bold,),
+                      CustomText(text: "Invite friends, get Rs. 350.00",fontsize: 19.0,fontweight: FontWeight.bold,),
                       SizedBox(height: 50.0,),
-                      CustomText(text: "1. Your friends gets Rs. 500.00",fontsize: 20.0,fontweight: FontWeight.bold,),
+                      CustomText(text: "1. Your friends gets Rs. 500.00",fontsize: 17.0,fontweight: FontWeight.bold,),
                       SizedBox(height: 10.0,),
-                      CustomText(text: "1 * Rs. 250.00 food delivery voucher",fontsize: 18.0,),
+                      CustomText(text: "1 * Rs. 250.00 food delivery voucher",fontsize: 15.0,),
                        SizedBox(height: 10.0,),
-                       CustomText(text: "1 * Rs. 125.00 shops voucher",fontsize: 18.0,),
+                       CustomText(text: "1 * Rs. 125.00 shops voucher",fontsize: 15.0,),
                          SizedBox(height: 10.0,),
-                        CustomText(text: "1 * Rs. 125.00 pandamart voucher",fontsize: 18.0,),
+                        CustomText(text: "1 * Rs. 125.00 pandamart voucher",fontsize: 15.0,),
                           SizedBox(height: 30.0,),
-                         CustomText(text: "when they sign up with your invite link",fontsize: 18.0,),
+                         CustomText(text: "when they sign up with your invite link",fontsize: 15.0,),
                            SizedBox(height: 40.0,),
-                          CustomText(text: "2. Then you get Rs. 350.00",fontsize: 20.0,fontweight: FontWeight.bold,),
+                          CustomText(text: "2. Then you get Rs. 350.00",fontsize: 18.0,fontweight: FontWeight.bold,),
                           SizedBox(height: 5.0,),
-                           CustomText(text: "once they place their first order (min. Rs. 500.00) ",fontsize: 18.0,),
+                           CustomText(text: "once they place their first order (min. Rs. 500.00) ",fontsize: 15.0,),
                     ],
                   ),
                 ),
@@ -58,17 +59,17 @@ class InviteFriends extends StatelessWidget {
                 Divider(color: Colors.grey,thickness: 0.0,),
                 SizedBox(height: 10.0,),
                 Container(
-                  child: Center(child: CustomText(text: "SHARE YOUR LINK",fontsize: 17.0,fontweight: FontWeight.bold,color: Colors.white,)),
+                  child: Center(child: CustomText(text: "SHARE YOUR LINK",fontsize: 14.0,fontweight: FontWeight.bold,color: Colors.white,)),
                   height: 60.0,width: 450.0,
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
-                  color: Color(0xffDF486F,),
+                  color: Color(0xffe31b70),
                   ),
                 ),
                 SizedBox(height: 20.0,),
               Container(
-                child: Center(child: CustomText(text: "SCAN QR CODE",fontsize: 17.0,fontweight: FontWeight.bold,color: Color(0xffDF486F,),)),
+                child: Center(child: CustomText(text: "SCAN QR CODE",fontsize: 15.0,fontweight: FontWeight.bold,color: Color(0xffDF486F,),)),
                 height: 60.0,width: 450.0,
-                decoration: BoxDecoration(border: Border.all(color: Color(0xffDF486F,)),
+                decoration: BoxDecoration(border: Border.all(color: Color(0xffe31b70)),
                 borderRadius: BorderRadius.circular(10)
                 ),
               )  ,

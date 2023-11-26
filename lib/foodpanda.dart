@@ -13,7 +13,7 @@ class FoodPanda extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffDF486F),
+      backgroundColor: Color(0xffe31b70),
       body:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
        

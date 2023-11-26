@@ -21,21 +21,21 @@ class ViewProfile extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 20,top: 50),
+                padding: const EdgeInsets.only(left: 20,top: 20),
                 child: Row(
                   children: [
                     InkWell(
                       onTap: () {
                         Navigator.push(context,MaterialPageRoute(builder: (context)=> FirstPage()));
                       },
-                      child: CustomIcons(icon: Icons.close,size: 30.0,color: Color(0xffDF486F),)),
+                      child: CustomIcons(icon: Icons.close,size: 20.0,color: Color(0xffe31b70),)),
                     SizedBox(width: 20,),
-                    CustomText(text: "Profile",fontsize: 20.0,fontweight: FontWeight.bold,)
+                    CustomText(text: "Profile",fontsize: 18.0,fontweight: FontWeight.bold,)
                   ],
                 ),
               ),
               SizedBox(height: 10,),
-              Divider(color: Colors.black,thickness: 0,),
+              Divider(color: Colors.grey,thickness: 0,),
         
               Padding(
                 padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
@@ -45,24 +45,24 @@ class ViewProfile extends StatelessWidget {
                   },
                   child: Container(
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
+                      padding: const EdgeInsets.only(left: 20,top: 17,right: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             children: [
-                              CustomText(text: "Name",fontsize: 20.0,),
+                              CustomText(text: "Name",fontsize: 15.0,),
                               Spacer(),
-                             CustomIcons(icon: Icons.edit_outlined,color: Color(0xffDF486F),size: 30.0,)
+                             CustomIcons(icon: Icons.edit_outlined,color: Color(0xffe31b70),size: 20.0,)
                             ],
                           ),
-                          SizedBox(height: 20,),
-                           CustomText(text: "Nadeem Sabir",fontsize: 20.0,fontweight: FontWeight.bold,),
+                          SizedBox(height: 15,),
+                           CustomText(text: "Nadeem Sabir",fontsize: 15.0,fontweight: FontWeight.bold,),
                         ],
                       ),
                     ),
-                    height: 120,width: 400,
-                    decoration: BoxDecoration(border: Border.all( color: Colors.grey,),
+                    height: 100,width: 400,
+                    decoration: BoxDecoration(border: Border.all( color: Color.fromARGB(255, 227, 224, 224),),
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white
                     ),
@@ -71,7 +71,7 @@ class ViewProfile extends StatelessWidget {
                 ),
               ),
                 Padding(
-                padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                padding: const EdgeInsets.only(left: 20,right: 20,top: 15),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(context,MaterialPageRoute(builder: (context)=> EmailScreen()));
@@ -84,17 +84,17 @@ class ViewProfile extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              CustomText(text: "Email",fontsize: 20.0,),
+                              CustomText(text: "Email",fontsize: 15.0,),
                               Spacer(),
-                             CustomIcons(icon: Icons.edit_outlined,color: Color(0xffDF486F),size: 30.0,)
+                             CustomIcons(icon: Icons.edit_outlined,color: Color(0xffe31b70),size: 20.0,)
                             ],
                           ),
                           SizedBox(height:5,),
-                           CustomText(text: "...........................gmail.com",fontsize: 20.0,fontweight: FontWeight.bold,),
+                           CustomText(text: "...........................gmail.com",fontsize: 15.0,fontweight: FontWeight.bold,),
                            SizedBox(height: 15,),
                            Container(
-                            child: Center(child: CustomText(text: "Verified",fontweight: FontWeight.bold,)),
-                            height: 25,width: 100,
+                            child: Center(child: CustomText(text: "Verified",fontweight: FontWeight.bold,fontsize: 15.0,)),
+                            height: 35,width: 80,
                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                              color: Colors.grey[300],
                       
@@ -106,7 +106,7 @@ class ViewProfile extends StatelessWidget {
                       
                     ),
                     height: 130,width: 400,
-                    decoration: BoxDecoration(border: Border.all( color: Colors.grey,),
+                    decoration: BoxDecoration(border: Border.all( color: Color.fromARGB(255, 227, 224, 224),),
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white
                     ),
@@ -115,7 +115,7 @@ class ViewProfile extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                padding: const EdgeInsets.only(left: 20,right: 20,top: 15),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(context,MaterialPageRoute(builder: (context)=> MobleScreen()));
@@ -128,16 +128,16 @@ class ViewProfile extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              CustomText(text: "Mobile number",fontsize: 20.0,),
+                              CustomText(text: "Mobile number",fontsize: 15.0,),
                               Spacer(),
-                             CustomIcons(icon: Icons.edit_outlined,color: Color(0xffDF486F),size: 30.0,)
+                             CustomIcons(icon: Icons.edit_outlined,color: Color(0xffe31b70),size: 20.0,)
                             ],
                           ),
                         ],
                       ),
                     ),
-                    height: 120,width: 400,
-                    decoration: BoxDecoration(border: Border.all( color: Colors.grey,),
+                    height: 100,width: 400,
+                    decoration: BoxDecoration(border: Border.all(color: Color.fromARGB(255, 227, 224, 224),),
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white
                     ),
@@ -150,7 +150,7 @@ class ViewProfile extends StatelessWidget {
                  child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                    children: [
-                     CustomText(text: "Connected accounts",fontsize: 25.0,fontweight: FontWeight.bold,),
+                     CustomText(text: "Connected accounts",fontsize: 18.0,fontweight: FontWeight.bold,),
                    ],
                  ),
                ),
@@ -167,17 +167,17 @@ class ViewProfile extends StatelessWidget {
                             children: [
                               CustomImages(url: "https://static-prod.adweek.com/wp-content/uploads/2017/10/Facebook-Logo-Hero-652x367.png",height: 30.0,width: 30.0,),
                               SizedBox(width: 10,),
-                              CustomText(text: "Facebook",fontsize: 20.0,),
+                              CustomText(text: "Facebook",fontsize: 15.0,),
                               Spacer(),
-                             CustomText(text: "Connect",color: Color(0xffDF486F),fontsize: 20.0,fontweight: FontWeight.bold,)
+                             CustomText(text: "Connect",color: Color(0xffe31b70),fontsize: 15.0,fontweight: FontWeight.bold,)
                             ],
                           ),
                         ),
                       ],
                     ),
                   ),
-                  height: 100,width: 400,
-                  decoration: BoxDecoration(border: Border.all( color: Colors.grey,),
+                  height: 90,width: 400,
+                  decoration: BoxDecoration(border: Border.all(color: Color.fromARGB(255, 227, 224, 224),),
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white
                   ),
@@ -185,7 +185,7 @@ class ViewProfile extends StatelessWidget {
                 ),
               ),
                 Padding(
-                padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                padding: const EdgeInsets.only(left: 20,right: 20,top: 15),
                 child: Container(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
@@ -202,20 +202,20 @@ class ViewProfile extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                              
                               children: [
-                                CustomText(text: "Google",fontsize: 20.0,),
+                                CustomText(text: "Google",fontsize: 15.0,),
                                 SizedBox(height: 10,),
-                                 CustomText(text: "Connected",fontsize: 20.0,color: Color.fromARGB(255, 29, 148, 246),),
+                                 CustomText(text: "Connected",fontsize: 15.0,color: Color.fromARGB(255, 29, 148, 246),),
                               ],
                             ),
                             Spacer(),
-                           CustomIcons(icon: Icons.close,color: Color(0xffDF486F),size: 30.0,)
+                           CustomIcons(icon: Icons.close,color: Color(0xffe31b70),size: 20.0,)
                           ],
                         ),
                       ],
                     ),
                   ),
-                  height: 100,width: 400,
-                  decoration: BoxDecoration(border: Border.all( color: Colors.grey,),
+                  height: 90,width: 400,
+                  decoration: BoxDecoration(border: Border.all(color: Color.fromARGB(255, 227, 224, 224),),
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white
                   ),

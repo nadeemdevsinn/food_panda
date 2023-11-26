@@ -27,9 +27,9 @@ class Interested extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,MaterialPageRoute(builder: (context)=>foodpandaBusiness()));
                         },
-                        child: CustomIcons(icon: Icons.arrow_back,size: 30.0,color: Color(0xffDF486F,),)),
+                        child: CustomIcons(icon: Icons.arrow_back,size: 20.0,color: Color(0xffe31b70),)),
                        SizedBox(width: 30.0,),
-                       CustomText(text: "foodpanda for business",fontsize: 20.0,fontweight: FontWeight.bold,),
+                       CustomText(text: "foodpanda for business",fontsize: 18.0,fontweight: FontWeight.bold,),
                      ],
                    ),
                  ),
@@ -43,17 +43,18 @@ class Interested extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                          
                   children: [
-                    CustomText(text: "We will contact you soon",color: Colors.black,fontsize: 20.0,fontweight: FontWeight.bold,),
+                    CustomText(text: "We will contact you soon",color: Colors.black,fontsize: 15.0,fontweight: FontWeight.bold,),
                     SizedBox(height: 20.0,),
-                    CustomText(text: "Your data is safe with us. Your details will only be",fontsize: 15.0,),
+                    CustomText(text: "Your data is safe with us. Your details will only be",fontsize: 13.0,),
         
-                     CustomText(text: "used to contact you about footpanda for business,",fontsize: 15.0,),
-                      CustomText(text: "no obligations!",fontsize: 15.0,),
+                     CustomText(text: "used to contact you about footpanda for business,",fontsize: 13.0,),
+                      CustomText(text: "no obligations!",fontsize: 13.0,),
                       SizedBox(height: 25.0,),
                       TextField(
                         cursorColor: Color(0xffDF486F,),
                         decoration: InputDecoration(
                           labelText: "Organisation",prefixStyle: TextStyle(color: Colors.black),
+                          labelStyle: TextStyle(color: Colors.black45),
                           border: OutlineInputBorder(
                            borderRadius: BorderRadius.circular(10.0),
                           ),
@@ -67,6 +68,7 @@ class Interested extends StatelessWidget {
                         cursorColor: Color(0xffDF486F,),
                         decoration: InputDecoration(
                           labelText: "Work email",prefixStyle: TextStyle(color: Colors.black),
+                           labelStyle: TextStyle(color: Colors.black45),
                           border: OutlineInputBorder(
                            borderRadius: BorderRadius.circular(10.0),
                           ),
@@ -78,14 +80,16 @@ class Interested extends StatelessWidget {
                         SizedBox(height: 25.0,),
                       Row(
                         children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 70.0),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 70.0),
+                            child: Container(
+                              height: 60,
                               child: TextField(
                                 cursorColor: Color(0xffDF486F,),
                                 decoration: InputDecoration(
                                   
                                   labelText: "+92",prefixStyle: TextStyle(color: Colors.black),
+                                   labelStyle: TextStyle(color: Colors.black45),
                                   border: OutlineInputBorder(
                                    borderRadius: BorderRadius.circular(10.0),
                                   ),
@@ -96,11 +100,13 @@ class Interested extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(width: 20,),
                            Expanded(
                             child: TextField(
                               cursorColor: Color(0xffDF486F,),
                               decoration: InputDecoration(
                                 labelText: "Mobile number",prefixStyle: TextStyle(color: Colors.black),
+                                 labelStyle: TextStyle(color: Colors.black45),
                                 border: OutlineInputBorder(
                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
@@ -117,6 +123,7 @@ class Interested extends StatelessWidget {
                         cursorColor: Color(0xffDF486F,),
                         decoration: InputDecoration(
                           labelText: "First name",prefixStyle: TextStyle(color: Colors.black),
+                           labelStyle: TextStyle(color: Colors.black45),
                           border: OutlineInputBorder(
                            borderRadius: BorderRadius.circular(10.0),
                           ),
@@ -130,6 +137,7 @@ class Interested extends StatelessWidget {
                         cursorColor: Color(0xffDF486F,),
                         decoration: InputDecoration(
                           labelText: "Last name",prefixStyle: TextStyle(color: Colors.black),
+                           labelStyle: TextStyle(color: Colors.black45),
                           border: OutlineInputBorder(
                            borderRadius: BorderRadius.circular(10.0),
                           ),
@@ -139,9 +147,9 @@ class Interested extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 40.0,),
-                      CustomText(text: "For any enquiries, contact us at",fontsize: 17.0,),
+                      CustomText(text: "For any enquiries, contact us at",fontsize: 14.0,),
                       SizedBox(height: 3.0,),
-                      CustomText(text: "corporate.sale@foodpanda.pk",fontsize: 17.0,)
+                      CustomText(text: "corporate.sales@foodpanda.pk",fontsize: 14.0,)
         
                   ],
                  ),
@@ -154,7 +162,7 @@ class Interested extends StatelessWidget {
                Padding(
                  padding: const EdgeInsets.only(left: 15.0,right: 15.0),
                  child: Container(
-                  child: Center(child: CustomText(text: "Submit",fontsize: 20.0,fontweight: FontWeight.bold,color: Colors.white,)),
+                  child: Center(child: CustomText(text: "Submit",fontsize: 18.0,fontweight: FontWeight.bold,color: Colors.white,)),
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0),
                    color: Colors.grey[400],
                   ),

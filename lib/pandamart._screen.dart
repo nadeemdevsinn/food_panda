@@ -4,6 +4,7 @@ import 'custom_icons.dart';
 import 'custom_images.dart';
 import 'custom_text.dart';
 import 'first_page.dart';
+import 'shopping_bag_screen.dart';
 
 
 
@@ -19,42 +20,46 @@ class Pandamart extends StatelessWidget {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 InkWell(
+                 Padding(
+                   padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                   child: Row(
+                     children: [
+                       InkWell(
                           onTap: () {
                             Navigator.push(context,MaterialPageRoute(builder: (context)=> FirstPage()));
                           },
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 20,right: 20,top: 30),
-                            child: Row(
-                              children: [
-                                CustomIcons(icon: Icons.arrow_back,color: Color(0xffDF486F),size: 35.0,),
-                                Spacer(),
-                                 CustomIcons(icon: Icons.heart_broken_outlined,color: Color(0xffDF486F),size: 30.0,),
-                                 SizedBox(width: 30,),
-                                  CustomIcons(icon: Icons.shopping_bag_outlined,color: Color(0xffDF486F),size: 30.0,),
-                          
-                              ],
-                            ),
-                          )),
+                        child: CustomIcons(icon: Icons.arrow_back,color: Color(0xffe31b70),size: 25.0,)),
+                       Spacer(),
+                        CustomIcons(icon: Icons.favorite_outline,color: Color(0xffe31b70),size: 20.0,),
+                        SizedBox(width: 30,),
+                         InkWell(
+                             onTap: () {
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=> ShoppingBag()));
+                    },
+                           child: CustomIcons(icon: Icons.shopping_bag_outlined,color: Color(0xffe31b70),size: 20.0,)),
+                 
+                     ],
+                   ),
+                 ),
                  Padding(
-                         padding: const EdgeInsets.only(left: 20,right: 20,top: 60),
+                         padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
                          child: Row(
                           children: [
-                             CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlB4FZg-4ukztLI0Zo-wJ_8E_3KCEcjowxwQ&usqp=CAU",width: 100.0,),
+                             CustomImages(url: "https://mir-s3-cdn-cf.behance.net/projects/404/bf8d6c178645195.Y3JvcCw5MDAsNzAzLDAsNDk.png",width: 100.0,height: 100.0,),
                        
                              Padding(
-                               padding: const EdgeInsets.only(left: 10),
+                               padding: const EdgeInsets.only(left: 20),
                                child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                  children: [
                                   
-                                   CustomText(text: "Pandamart-Mozang Chunn...",fontsize: 18.0,fontweight: FontWeight.bold,),
+                                   CustomText(text: "Pandamart-Mozang Chunn...",fontsize: 15.0,fontweight: FontWeight.bold,),
                                     SizedBox(height: 10,),
                                    Row(
                                      children: [
                                        CustomText(text: "Minimum Rs. 249.00",),
-                                     SizedBox(width: 80,),
-                                        CustomIcons(icon: Icons.circle_outlined,size: 30.0,color: Color(0xffDF486F),),
+                                     SizedBox(width: 70,),
+                                        CustomIcons(icon: Icons.circle_outlined,size: 20.0,color: Color(0xffe31b70),),
                                         
                                        
                                      ],
@@ -70,11 +75,11 @@ class Pandamart extends StatelessWidget {
                                          padding: const EdgeInsets.only(left: 20.0,right: 20.0,top: 20.0),
                                          child: Row(
                                            children: [
-                                             CustomIcons(icon: Icons.watch_later_outlined,size: 30.0,color: Color(0xffDF486F),),
+                                             CustomIcons(icon: Icons.watch_later_outlined,size: 20.0,color: Color(0xffe31b70),),
                                              SizedBox(width: 10,),
-                                             CustomText(text: "Delivery: 30 min",fontsize: 20.0,fontweight: FontWeight.bold,),
+                                             CustomText(text: "Delivery: 30 min",fontsize: 15.0,fontweight: FontWeight.bold,),
                                              Spacer(),
-                                              CustomText(text: "Change",fontsize: 20.0,fontweight: FontWeight.bold,color: Colors.black45,),
+                                              CustomText(text: "Change",fontsize: 15.0,fontweight: FontWeight.bold,color: Colors.black45,),
                                            ],
                                          ),
                                        ),
@@ -83,9 +88,9 @@ class Pandamart extends StatelessWidget {
                                          padding: const EdgeInsets.only(left: 20,top: 20),
                                          child: Container(
                                           child: Center(child: CustomText(text: "BUYFRESH FOR 25% OFF FRESH")),
-                                          decoration: BoxDecoration(border: Border.all(color: Colors.grey),
+                                          decoration: BoxDecoration(border: Border.all(color: const Color.fromARGB(255, 217, 216, 216)),
                                           borderRadius: BorderRadius.circular(20),
-                                           color: Colors.grey[300],
+                                           color: Colors.grey[200],
                                           ),
                                           height: 30.0,width: 250.0,
                                          
@@ -105,10 +110,10 @@ class Pandamart extends StatelessWidget {
                                                            children: [
                                                              CustomIcons(
                                                                icon: Icons.search,
-                                                               size: 30.0,color: Color(0xffDF486F),
+                                                               size: 20.0,color: Color(0xffe31b70),
                                                              ),
                                                              SizedBox(width: 20.0,),
-                                                             Text("Search products and categories",style: TextStyle(fontSize: 18.0),)
+                                                             Text("Search products and categories",style: TextStyle(fontSize: 15.0),)
                                                            ],
                                                          )
                                                      ),
@@ -116,7 +121,7 @@ class Pandamart extends StatelessWidget {
                                        SingleChildScrollView(
                                         scrollDirection: Axis.horizontal,
                                          child: Padding(
-                                           padding: const EdgeInsets.only(left: 20,top: 40),
+                                           padding: const EdgeInsets.only(left: 20,top: 30),
                                            child: Row(
                                             children: [
                                               CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Zr0NWSL-obvSCpkk5EsLk_5qVUWqSYyVjg&usqp=CAU",height: 200.0,width: 300.0,),
@@ -144,7 +149,7 @@ class Pandamart extends StatelessWidget {
                                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                                             color: Colors.grey,
                                             ),
-                                            height: 20,width: 20,
+                                            height: 10,width: 10,
                                             
                                           ),
                                           SizedBox(width: 10,),
@@ -152,7 +157,7 @@ class Pandamart extends StatelessWidget {
                                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                                             color: Colors.grey,
                                             ),
-                                            height: 20,width: 20,
+                                            height: 10,width: 10,
                                             
                                           ),
                                           SizedBox(width: 10,),
@@ -160,7 +165,7 @@ class Pandamart extends StatelessWidget {
                                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                                             color: Colors.grey,
                                             ),
-                                            height: 20,width: 20,
+                                            height: 10,width: 10,
                                             
                                           ),
                                           SizedBox(width: 10,),
@@ -168,7 +173,7 @@ class Pandamart extends StatelessWidget {
                                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                                             color: Colors.grey,
                                             ),
-                                            height: 20,width: 20,
+                                            height: 10,width: 10,
                                             
                                           ),
                                           SizedBox(width: 10,),
@@ -176,7 +181,7 @@ class Pandamart extends StatelessWidget {
                                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                                             color: Colors.grey,
                                             ),
-                                            height: 20,width: 20,
+                                            height: 10,width: 10,
                                             
                                           ),
                                           SizedBox(width: 10,),
@@ -184,7 +189,7 @@ class Pandamart extends StatelessWidget {
                                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                                             color: Colors.grey,
                                             ),
-                                            height: 20,width: 20,
+                                            height: 10,width: 10,
                                             
                                           ),
                                           SizedBox(width: 10,),
@@ -192,7 +197,7 @@ class Pandamart extends StatelessWidget {
                                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                                             color: Colors.grey,
                                             ),
-                                            height: 20,width: 20,
+                                            height: 10,width: 10,
                                             
                                           ),
                                           SizedBox(width: 10,),
@@ -200,14 +205,14 @@ class Pandamart extends StatelessWidget {
                                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
                                             color: Colors.grey,
                                             ),
-                                            height: 20,width: 20,
+                                            height: 10,width: 10,
                                             
                                           )
                                        ],
                                        ),
                                        Padding(
                                          padding: const EdgeInsets.only(left: 20,top: 40),
-                                         child: CustomText(text: "Add these vouchers at checkout!",fontsize: 20.0,fontweight: FontWeight.bold,),
+                                         child: CustomText(text: "Add these vouchers at checkout!",fontsize: 13.0,fontweight: FontWeight.bold,),
                                        ),
                                        Padding(
                                          padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
@@ -222,8 +227,9 @@ class Pandamart extends StatelessWidget {
                                                  
                                                   children: [
                                                     
-                                                    CustomIcons(icon: Icons.settings,size: 30.0,color: Color(0xffDF486F),),
-                                                    CustomText(text: "Get Rs.250 off your groceries!",fontsize: 20.0,),
+                                                    CustomIcons(icon: Icons.settings,size: 20.0,color: Color(0xffe31b70),),
+                                                    SizedBox(width: 10,),
+                                                    CustomText(text: "Get Rs.250 off your groceries!",fontsize: 15.0,),
                                                     
                                                     
                                                   ],
@@ -233,13 +239,13 @@ class Pandamart extends StatelessWidget {
                                                  Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                    children: [
-                                                     CustomText(text: "Rs. 250.00",fontsize: 20.0,fontweight: FontWeight.bold,),
+                                                     CustomText(text: "Rs. 250.00",fontsize: 15.0,fontweight: FontWeight.bold,),
                                                       Divider(color: Colors.black,thickness: 0,),
                                                      SizedBox(height: 5,),
                                                      Container(
                                                       child: Center(child: CustomText(text: "Min. order Rs. 1,800.Use by 13 Nov 2023",)),
         
-                                                      decoration: BoxDecoration(border: Border.all(  color: Colors.grey,),
+                                                      decoration: BoxDecoration(border: Border.all(  color: const Color.fromARGB(255, 220, 219, 219),),
                                                       borderRadius: BorderRadius.circular(20),
                                                       color: Colors.white
                                                       ),
@@ -253,7 +259,8 @@ class Pandamart extends StatelessWidget {
                                           ),
                                           
                                           height: 150,width: 400,
-                                          decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+                                          decoration: BoxDecoration(border: Border.all(color: Color.fromARGB(255, 218, 217, 217)),
+                                          color: Colors.white),
                                          ),
                                        ),
                                        SizedBox(height: 30,),
@@ -270,8 +277,8 @@ class Pandamart extends StatelessWidget {
                                                   backgroundImage: NetworkImage("https://5.imimg.com/data5/SELLER/Default/2022/7/XQ/CD/FZ/122190343/1654843353977-sku-0215-0.jpg"),
                                                  ),
                                                  SizedBox(height: 10,),
-                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 15.0,),
-                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 15.0,)
+                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 12.0,),
+                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 12.0,)
                                                ],
                                              ),
                                               SizedBox(width: 15,),
@@ -282,8 +289,8 @@ class Pandamart extends StatelessWidget {
                                                   backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9p9regAixzWcZ2mtTRWan0zEkvRZNmYPdOw&usqp=CAU"),
                                              ),
                                               SizedBox(height: 10,),
-                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 15.0,),
-                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 15.0,)
+                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 12.0,),
+                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 12.0,)
                                                 ],
                                               ),
                                               SizedBox(width: 15,),
@@ -294,8 +301,8 @@ class Pandamart extends StatelessWidget {
                                                   backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi5KOs0_QBku5H15xqRKu4mhI1f_xegPVPvKxNeTqZevdnvP6o98h_e2-8n5xpg2MritI&usqp=CAU"),
                                              ),
                                               SizedBox(height: 10,),
-                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 15.0,),
-                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 15.0,)
+                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 12.0,),
+                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 12.0,)
                                                 ],
                                               ),
                                            ],
@@ -314,8 +321,8 @@ class Pandamart extends StatelessWidget {
                                                   backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfSHv6DTzaoVVWUds7eomjhMBSvUEeTVKdk0ZnTYsxcoZ84kDH5YI4nXjyMBpLktJQJd8&usqp=CAU"),
                                                  ),
                                                  SizedBox(height: 10,),
-                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 15.0,),
-                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 15.0,)
+                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 12.0,),
+                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 12.0,)
                                                ],
                                              ),
                                               SizedBox(width: 15,),
@@ -326,8 +333,8 @@ class Pandamart extends StatelessWidget {
                                                   backgroundImage: NetworkImage("https://richanddelish.com/wp-content/uploads/2022/08/Chocolate-Cake-Pops.jpg"),
                                              ),
                                               SizedBox(height: 10,),
-                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 15.0,),
-                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 15.0,)
+                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 12.0,),
+                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 12.0,)
                                                 ],
                                               ),
                                               SizedBox(width: 15,),
@@ -338,8 +345,8 @@ class Pandamart extends StatelessWidget {
                                                   backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq1H4f34xsmLke9QW8oB6Ng9pT88pyQjvRX9NPMVjClDyGnNwg6r45-7nBXD1KkKlZEPA&usqp=CAU"),
                                              ),
                                               SizedBox(height: 10,),
-                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 15.0,),
-                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 15.0,)
+                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 12.0,),
+                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 12.0,)
                                                 ],
                                               ),
                                            ],
@@ -358,8 +365,8 @@ class Pandamart extends StatelessWidget {
                                                   backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtcI2ROl3hpOYXDw20IRMSx5jMlsnoNh6-PA&usqp=CAU"),
                                                  ),
                                                  SizedBox(height: 10,),
-                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 15.0,),
-                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 15.0,)
+                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 12.0,),
+                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 12.0,)
                                                ],
                                              ),
                                               SizedBox(width: 15,),
@@ -370,8 +377,8 @@ class Pandamart extends StatelessWidget {
                                                   backgroundImage: NetworkImage("https://thumbs.dreamstime.com/b/orange-juice-17172736.jpg"),
                                              ),
                                               SizedBox(height: 10,),
-                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 15.0,),
-                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 15.0,)
+                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 12.0,),
+                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 12.0,)
                                                 ],
                                               ),
                                               SizedBox(width: 15,),
@@ -382,631 +389,95 @@ class Pandamart extends StatelessWidget {
                                                   backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1aDdU9jyo2fKtDVnEew4JdqAeXMAVuH7z7g&usqp=CAU"),
                                              ),
                                               SizedBox(height: 10,),
-                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 15.0,),
-                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 15.0,)
+                                                 CustomText(text: "Up To 50%",fontweight: FontWeight.bold,fontsize: 12.0,),
+                                                  CustomText(text: "off",fontweight: FontWeight.bold,fontsize: 12.0,)
                                                 ],
                                               ),
                                            ],
                                          ),
                                        ),
-                                       SizedBox(height: 40,),
+                                       SizedBox(height: 30,),
                                        Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                          children: [
                                            Column(
                                              children: [
-                                               CustomText(text: "View all categories",fontsize: 22.0,fontweight: FontWeight.bold,color: Color(0xffDF486F),),
+                                               CustomText(text: "View all categories",fontsize: 18.0,fontweight: FontWeight.bold,color: Color(0xffe31b70),),
                                              ],
                                            ),
                                          ],
                                        ),
+                                       
+                                                  Padding(
+                                                    padding: const EdgeInsets.only(left: 20,top: 20),
+                                                    child: Row(
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        CustomText(text: "Popular",fontsize: 18.0,fontweight: FontWeight.bold,),
+                                                      ],
+                                                    ),
+                                                  ),
                                           SingleChildScrollView(
                                         scrollDirection: Axis.horizontal,
                                          child: Padding(
-                                           padding: const EdgeInsets.only(left: 20,top: 40),
+                                           padding: const EdgeInsets.only(left: 20,top: 20),
                                            child: Row(
                                             children: [
                                               Column(
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Juice",fontsize: 20.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                ],
-                                              ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height: 200.0,width: 300.0,),
-                                                   
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Juice",fontsize: 20.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height: 200.0,width: 300.0,),
-                                                    
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Juice",fontsize: 20.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                 children: [
-                                                   Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                     children: [
-                                                       SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                       CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height: 200.0,width: 300.0,),
-                                                                                                     CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Juice",fontsize: 20.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                     ],
-                                                   ),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height: 200.0,width: 300.0,),
-                                                    
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Juice",fontsize: 20.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                  SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                    CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Juice",fontsize: 20.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-        
-                                            ],
-                                           ),
-                                         ),
-                                       ),
-                                         SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                         child: Padding(
-                                           padding: const EdgeInsets.only(left: 20,top: 40),
-                                           child: Row(
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLR7q_H0-ZCvH86aejiLT0n4vUh5snCJjqQ&usqp=CAU",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Lays",fontsize: 18.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                ],
-                                              ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLR7q_H0-ZCvH86aejiLT0n4vUh5snCJjqQ&usqp=CAU",height: 200.0,width: 300.0,),
-                                                   
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Lays",fontsize: 18.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLR7q_H0-ZCvH86aejiLT0n4vUh5snCJjqQ&usqp=CAU",height: 200.0,width: 300.0,),
-                                                    
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Lays",fontsize: 18.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                 children: [
-                                                   Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                     children: [
-                                                       SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                       CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLR7q_H0-ZCvH86aejiLT0n4vUh5snCJjqQ&usqp=CAU",height: 200.0,width: 300.0,),
-                                                                                                     CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Lays",fontsize: 18.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                     ],
-                                                   ),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLR7q_H0-ZCvH86aejiLT0n4vUh5snCJjqQ&usqp=CAU",height: 200.0,width: 300.0,),
-                                                    
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Lays",fontsize: 18.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                  SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                    CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLR7q_H0-ZCvH86aejiLT0n4vUh5snCJjqQ&usqp=CAU",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Lays",fontsize: 18.0,),
-                                                      CustomText(text: "Pakistani",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-        
-                                            ],
-                                           ),
-                                         ),
-                                       ),
-                                         SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                         child: Padding(
-                                           padding: const EdgeInsets.only(left: 20,top: 40),
-                                           child: Row(
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAlpCuoEM9AoS4kwcKe4g0-yFZ2pm4KGRo_A&usqp=CAU",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 100.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Vegetable",fontsize: 18.0,),
-                                                      CustomText(text: "Health Benefit Cabbage",fontsize: 20.0,),
-                                                ],
-                                              ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
                                                   
-                                                      CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAlpCuoEM9AoS4kwcKe4g0-yFZ2pm4KGRo_A&usqp=CAU",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 100.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Vegetable",fontsize: 18.0,),
-                                                      CustomText(text: "Health Benefit Cabbage",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
                                                   SizedBox(height: 10,),
-                                                   CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAlpCuoEM9AoS4kwcKe4g0-yFZ2pm4KGRo_A&usqp=CAU",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 100.00",fontsize: 20.0,fontweight: FontWeight.bold,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
                                                   SizedBox(height: 5,),
-                                                    CustomText(text: "Vegetable",fontsize: 18.0,),
-                                                      CustomText(text: "Health Benefit Cabbage",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                 children: [
-                                                   Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                     children: [
-                                                       SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                      CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAlpCuoEM9AoS4kwcKe4g0-yFZ2pm4KGRo_A&usqp=CAU",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 100.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Vegetable",fontsize: 18.0,),
-                                                      CustomText(text: "Health Benefit Cabbage",fontsize: 20.0,),
-                                                     ],
-                                                   ),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAlpCuoEM9AoS4kwcKe4g0-yFZ2pm4KGRo_A&usqp=CAU",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 100.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Vegetable",fontsize: 18.0,),
-                                                      CustomText(text: "Health Benefit Cabbage",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                  SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAlpCuoEM9AoS4kwcKe4g0-yFZ2pm4KGRo_A&usqp=CAU",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 100.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Vegetable",fontsize: 18.0,),
-                                                      CustomText(text: "Health Benefit Cabbage",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-        
-                                            ],
-                                           ),
-                                         ),
-                                       ),
-                                         SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                         child: Padding(
-                                           padding: const EdgeInsets.only(left: 20,top: 40),
-                                           child: Row(
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/LH/v4qx-hero.jpg?width=512&height=384&quality=45",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Coca Cola",fontsize: 18.0,),
-                                                      CustomText(text: "Chicken Qorma",fontsize: 20.0,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
                                                 ],
                                               ),
                                               SizedBox(width: 15,),
                                                Column(
                                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
+                                                children: [
+                                                  
                                                   SizedBox(height: 10,),
-                                                   CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/LH/v4qx-hero.jpg?width=512&height=384&quality=45",height: 200.0,width: 300.0,),
-                                                   
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
                                                   SizedBox(height: 5,),
-                                                    CustomText(text: "Coca Cola",fontsize: 18.0,),
-                                                      CustomText(text: "Chicken Qorma",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                               SizedBox(width: 15,),
                                                Column(
                                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
+                                                children: [
+                                                  
                                                   SizedBox(height: 10,),
-                                                   CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/LH/v4qx-hero.jpg?width=512&height=384&quality=45",height: 200.0,width: 300.0,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                               SizedBox(width: 15,),
+                                               Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  
+                                                  SizedBox(height: 10,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                              SizedBox(width: 15,),
+
                                                     
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Coca Cola",fontsize: 18.0,),
-                                                      CustomText(text: "Chicken Qorma",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                 children: [
-                                                   Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                     children: [
-                                                       SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                       CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/LH/v4qx-hero.jpg?width=512&height=384&quality=45",height: 200.0,width: 300.0,),
-                                                                                                     CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Coca Cola",fontsize: 18.0,),
-                                                      CustomText(text: "Chicken Qorma",fontsize: 20.0,),
-                                                     ],
-                                                   ),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/LH/v4qx-hero.jpg?width=512&height=384&quality=45",height: 200.0,width: 300.0,),
-                                                    
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Coca Cola",fontsize: 18.0,),
-                                                      CustomText(text: "Chicken Qorma",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                  SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                    CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/LH/v4qx-hero.jpg?width=512&height=384&quality=45",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 234.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Coca Cola",fontsize: 18.0,),
-                                                      CustomText(text: "Chicken Qorma",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-        
-                                            ],
-                                           ),
-                                         ),
-                                       ),
-                                         SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                         child: Padding(
-                                           padding: const EdgeInsets.only(left: 20,top: 40),
-                                           child: Row(
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://packagingoftheworld.com/wp-content/uploads/2022/04/02_Can-Mock-up-5.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 200.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Rani Juice",fontsize: 18.0,),
-                                                      CustomText(text: "Packaging Of the World",fontsize: 20.0,),
-                                                ],
-                                              ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://packagingoftheworld.com/wp-content/uploads/2022/04/02_Can-Mock-up-5.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 200.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Rani Juice",fontsize: 18.0,),
-                                                      CustomText(text: "Packaging Of the World",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://packagingoftheworld.com/wp-content/uploads/2022/04/02_Can-Mock-up-5.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 200.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Rani Juice",fontsize: 18.0,),
-                                                      CustomText(text: "Packaging Of the World",fontsize: 20.0,),
-                                                     
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                 children: [
-                                                   Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                     children: [
-                                                       SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                     CustomImages(url: "https://packagingoftheworld.com/wp-content/uploads/2022/04/02_Can-Mock-up-5.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 200.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Rani Juice",fontsize: 18.0,),
-                                                      CustomText(text: "Packaging Of the World",fontsize: 20.0,),
-                                                     ],
-                                                   ),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://packagingoftheworld.com/wp-content/uploads/2022/04/02_Can-Mock-up-5.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 200.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Rani Juice",fontsize: 18.0,),
-                                                      CustomText(text: "Packaging Of the World",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                  SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://packagingoftheworld.com/wp-content/uploads/2022/04/02_Can-Mock-up-5.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 200.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Rani Juice",fontsize: 18.0,),
-                                                      CustomText(text: "Packaging Of the World",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-        
-                                            ],
-                                           ),
-                                         ),
-                                       ),
-                                         SingleChildScrollView(
-                                        scrollDirection: Axis.horizontal,
-                                         child: Padding(
-                                           padding: const EdgeInsets.only(left: 20,top: 40),
-                                           child: Row(
-                                            children: [
-                                              Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://www.pacagemockup.com/wp-content/uploads/2020/11/Free-Juice-Cardboard-Box-Packaging-Mockup-PSD.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 600.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Apple Juice",fontsize: 18.0,),
-                                                    SizedBox(height: 5,),
-                                                      CustomText(text: "Juice Carton Box",fontsize: 20.0,),
-                                                ],
-                                              ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://www.pacagemockup.com/wp-content/uploads/2020/11/Free-Juice-Cardboard-Box-Packaging-Mockup-PSD.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 600.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Apple Juice",fontsize: 18.0,),
-                                                    SizedBox(height: 5,),
-                                                      CustomText(text: "Juice Carton Box",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://www.pacagemockup.com/wp-content/uploads/2020/11/Free-Juice-Cardboard-Box-Packaging-Mockup-PSD.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 600.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Apple Juice",fontsize: 18.0,),
-                                                    SizedBox(height: 5,),
-                                                      CustomText(text: "Juice Carton Box",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                 children: [
-                                                   Column(
-                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                     children: [
-                                                       SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                       CustomImages(url: "https://www.pacagemockup.com/wp-content/uploads/2020/11/Free-Juice-Cardboard-Box-Packaging-Mockup-PSD.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 600.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Apple Juice",fontsize: 18.0,),
-                                                    SizedBox(height: 5,),
-                                                      CustomText(text: "Juice Carton Box",fontsize: 20.0,),
-                                                     ],
-                                                   ),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                   SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                  CustomImages(url: "https://www.pacagemockup.com/wp-content/uploads/2020/11/Free-Juice-Cardboard-Box-Packaging-Mockup-PSD.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 600.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Apple Juice",fontsize: 18.0,),
-                                                    SizedBox(height: 5,),
-                                                      CustomText(text: "Juice Carton Box",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                 children: [
-                                                  SizedBox(height: 20,),
-                                                  CustomText(text: "Popular",fontsize: 25.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 10,),
-                                                   CustomImages(url: "https://www.pacagemockup.com/wp-content/uploads/2020/11/Free-Juice-Cardboard-Box-Packaging-Mockup-PSD.jpg",height: 200.0,width: 300.0,),
-                                                  CustomText(text: "Rs. 600.00",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                                  SizedBox(height: 5,),
-                                                    CustomText(text: "Apple Juice",fontsize: 18.0,),
-                                                    SizedBox(height: 5,),
-                                                      CustomText(text: "Juice Carton Box",fontsize: 20.0,),
-                                                 ],
-                                               ),
-                                              SizedBox(width: 15,),
-        
-                                            ],
-                                           ),
-                                         ),
-                                       ),
-        
-        SizedBox(height: 30,)
+       
                                        
                                        
                                       
@@ -1018,6 +489,172 @@ class Pandamart extends StatelessWidget {
             ),
         ),
       ),
+        Padding(
+                                                    padding: const EdgeInsets.only(left: 20,top: 30),
+                                                    child: Row(
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        CustomText(text: "Popular",fontsize: 18.0,fontweight: FontWeight.bold,),
+                                                      ],
+                                                    ),
+                                                  ),
+                                          SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                         child: Padding(
+                                           padding: const EdgeInsets.only(left: 20,top: 20),
+                                           child: Row(
+                                            children: [
+                                              Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  
+                                                  SizedBox(height: 10,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                              SizedBox(width: 15,),
+                                               Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  
+                                                  SizedBox(height: 10,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                               SizedBox(width: 15,),
+                                               Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  
+                                                  SizedBox(height: 10,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                               SizedBox(width: 15,),
+                                               Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  
+                                                  SizedBox(height: 10,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                              SizedBox(width: 15,),
+
+                                                    
+       
+                                       
+                                       
+                                      
+                                      
+          
+                                       
+          
+              ],
+            ),
+        ),
+      ),
+        Padding(
+                                                    padding: const EdgeInsets.only(left: 20,top: 30),
+                                                    child: Row(
+                                                      mainAxisAlignment: MainAxisAlignment.start,
+                                                      children: [
+                                                        CustomText(text: "Popular",fontsize: 18.0,fontweight: FontWeight.bold,),
+                                                      ],
+                                                    ),
+                                                  ),
+                                          SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                         child: Padding(
+                                           padding: const EdgeInsets.only(left: 20,top: 20,bottom: 20),
+                                           child: Row(
+                                            children: [
+                                              Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  
+                                                  SizedBox(height: 10,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                              SizedBox(width: 15,),
+                                               Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  
+                                                  SizedBox(height: 10,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                               SizedBox(width: 15,),
+                                               Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  
+                                                  SizedBox(height: 10,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                               SizedBox(width: 15,),
+                                               Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  
+                                                  SizedBox(height: 10,),
+                                                  CustomImages(url: "https://images.healthshots.com/healthshots/en/uploads/2022/02/08134710/JUICES-1600x900.jpg",height:150.0,width: 150.0,),
+                                                  CustomText(text: "Rs. 234.00",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                                  SizedBox(height: 5,),
+                                                    CustomText(text: "Juice",fontsize: 15.0,),
+                                                      CustomText(text: "Pakistani",fontsize: 15.0,),
+                                                ],
+                                              ),
+                                              SizedBox(width: 15,),
+
+                                                    
+       
+                                       
+                                       
+                                      
+                                      
+          
+                                       
+          
+              ],
+            ),
+        ),
+      ),
+              ]
+          )
+        )
+      )
     );
   }
 }

@@ -25,32 +25,32 @@ class CartScreen extends StatelessWidget {
                       Navigator.push(context,MaterialPageRoute(builder: (context)=>FirstPage()));
                     },
                     
-                    child: CustomIcons(icon: Icons.close,size: 30.0,color: Color(0xffDF486F,),)),
+                    child: CustomIcons(icon: Icons.close,size: 20.0,color: Color(0xffe31b70),)),
                   SizedBox(width: 30.0,),
-                  CustomText(text: "Cart",fontsize: 23.0,fontweight: FontWeight.bold,color: Colors.black,)
+                  CustomText(text: "Cart",fontsize: 18.0,fontweight: FontWeight.bold,color: Colors.black,)
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 100.0),
+              padding: const EdgeInsets.only(top: 50.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  CustomImages(url: "https://lzd-img-global.slatic.net/g/ff/kf/S35396a4e0e9f4f1da6984d52097f8885m.jpg_360x360q75.jpg_.webp",),
+                  CustomImages(url: "https://easydrawingguides.com/wp-content/uploads/2017/04/how-to-draw-a-cartoon-panda-featured-image-1200.png",height: 400.0,),
                   SizedBox(height: 15.0,),
-                  CustomText(text: "Hungry?",fontsize: 30.0,fontweight: FontWeight.bold,color:Colors.black ,),
+                  CustomText(text: "Hungry?",fontsize: 18.0,fontweight: FontWeight.bold,color:Colors.black ,),
                   SizedBox(height: 15.0,),
-                  CustomText(text: "You haven't added anything to your cart!",fontsize: 17.0,fontweight: FontWeight.normal,),
+                  CustomText(text: "You haven't added anything to your cart!",fontsize: 15.0,fontweight: FontWeight.normal,),
                   SizedBox(height: 17.0,),
                   InkWell(
                     onTap: () {
                       Navigator.push(context,MaterialPageRoute(builder: (context)=>FirstPage()));
                     },
                     child: Container(
-                      child: Center(child: CustomText(text: "Browse",fontsize: 17.0,fontweight: FontWeight.bold,color: Colors.white,)),
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0), color: Color(0xffDF486F,),),
+                      child: Center(child: CustomText(text: "Browse",fontsize: 15.0,fontweight: FontWeight.bold,color: Colors.white,)),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0), color: Color(0xffe31b70),),
                      
-                      height: 45.0,width: 110.0,
+                      height: 40.0,width: 110.0,
                     ),
                   )
                 ],

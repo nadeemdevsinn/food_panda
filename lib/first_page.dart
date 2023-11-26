@@ -36,20 +36,23 @@ class FirstPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 70,
-          backgroundColor: Color(0xffDF486F),
+        
+          toolbarHeight: 55,
+          backgroundColor: Color(0xffe31b70),
+          elevation: 0.0,
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Selected location"),
               SizedBox(
-                height: 5,
+                height: 3,
               ),
               Text(
                 "Civil Dispensary Gagan Thal Dera Ghazi Khan",
-                style: TextStyle(fontSize: 15),
+                style: TextStyle(fontSize: 11),
               ),
               // Spacer(),
+              SizedBox(height: 3,)
             ],
           ),
           actions: [
@@ -60,7 +63,7 @@ class FirstPage extends StatelessWidget {
               },
               child: CustomIcons(
                 icon: Icons.shopping_bag_outlined,
-                size: 20.0,
+                size: 25.0,
               ),
             ),
             SizedBox(
@@ -73,8 +76,8 @@ class FirstPage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                color: Color(0xffDF486F),
-                padding: EdgeInsets.all(15.0),
+                color: Color(0xffe31b70),
+                padding: EdgeInsets.only(bottom: 15,left: 10,right:10),
                 child: InkWell(
                   child: Container(
                       padding: EdgeInsets.symmetric(
@@ -87,14 +90,14 @@ class FirstPage extends StatelessWidget {
                         children: [
                           CustomIcons(
                             icon: Icons.search,
-                            size: 30.0,
+                            size: 20.0,color: Colors.black45,
                           ),
                           SizedBox(
                             width: 10.0,
                           ),
                           Text(
                             "Search for shops & restaurants",
-                            style: TextStyle(fontSize: 17.0),
+                            style: TextStyle(fontSize: 13.0,color: Colors.grey),
                           )
                         ],
                       )),
@@ -106,214 +109,294 @@ class FirstPage extends StatelessWidget {
                   },
                 ),
               ),
+
+
+
+
+
               Container(
-                height: 340.0,
+                height: 385.0,
                 color: Colors.grey[200],
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => FoodDelivery()));
-                          },
-                          child: Container(
-                            padding: EdgeInsets.all(15),
-                            margin: EdgeInsets.all(10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  text: "Food delivery",
-                                  color: Colors.black,
-                                  fontsize: 22.0,
-                                  fontweight: FontWeight.bold,
+                child: Container(
+                  padding: EdgeInsets.all(16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: [
+                          
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>FoodDelivery()));
+                              },
+                              child: Container(
+                                
+                               
+                                padding: EdgeInsets.all(10),
+                               height: 250.0,
+                               
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                   color: Colors.white,
+                                   
                                 ),
-                                CustomText(
-                                  text: "Order food you love",
+                                child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Column(
+                                        children: [
+                                          CustomText(
+                                            text: "Food delivery",
+                                            color: Colors.black,
+                                            fontsize: 20.0,
+                                            fontweight: FontWeight.bold,
+                                          ),
+                                          SizedBox(height: 10,),
+                                           CustomText(
+                                        text: "Order food you love",
+                                      ),
+                                        ],
+                                      ),
+                                      Spacer(),
+                                     
+                                       Row(
+                                      
+                                         children: [
+                                          Spacer(),
+                                           CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/Products/1283494.jpg?width=%s",height: 140.0,width: 110.0,),
+                                         ],
+                                         
+                                       ),
+                                       
+                                     
+                                    ]
                                 ),
-                                Spacer(),
-                                Container(),
-                                Spacer(),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    CustomImages(
-                                      url:
-                                          "https://images.deliveryhero.io/image/fd-pk/Products/1317465.jpg?width=%s",
-                                      height: 110.0,
-                                      width: 110.0,
-                                    ),
-                                  ],
-                                )
-                              ],
+                                
+                                                      
+                              ),
                             ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              color: Colors.white,
-                            ),
-                            height: 200,
-                            width: 170.0,
-                          ),
+                            SizedBox(height: 10,),
+                            
+                             InkWell(
+                                onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>DineIn()));
+                              },
+                               child: Container(
+                               
+                                height: 90.0,
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                 color: Colors.white,
+                                ),
+                                child:  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 15,top: 10),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            CustomText(
+                                              text: "Dine-in",
+                                              color: Colors.black,
+                                              fontsize: 20.0,
+                                              fontweight: FontWeight.bold,
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            CustomText(
+                                              text: "Go out to eat",
+                                            ),
+                                            SizedBox(height: 2,),
+                                            CustomText(
+                                              text: "For 25% off",
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      CustomImages(
+                                        url:
+                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkMeh0V58hCW2zqMRkL78sjbyfRUPZxgUIU7xE0nzTqZenpRDhgQ8E_NVDI2iQkkcPOhk&usqp=CAU",
+                                        height: 90.0,
+                                        width: 60.0,
+                                      ),
+                                    ],
+                                  ),
+                                                         ),
+                             )
+                          ],
                         ),
-                        InkWell(
-                          child: Container(
-                            margin: EdgeInsets.all(10.0),
-                            padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                  children: [
-                                    CustomText(
-                                      text: "Dine-in",
-                                      color: Colors.black,
-                                      fontsize: 22.0,
-                                      fontweight: FontWeight.bold,
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    CustomText(
-                                      text: "Go out to eat",
-                                    ),
-                                    CustomText(
-                                      text: "For 25% off",
-                                    ),
-                                  ],
-                                ),
-                                Spacer(),
-                                CustomImages(
-                                  url:
-                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9YcZTgdIVWeGdF4Ku_I4sx0YQvQ4--SK5kfUAfNegDKEqqEeH-fW8fGXO59VZC-o1kGA&usqp=CAU",
-                                  height: 90.0,
-                                  width: 60.0,
-                                ),
-                              ],
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              color: Colors.white,
-                            ),
-                            height: 90,
-                            width: 170.0,
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DineIn()));
-                          },
-                        ),
-                      ],
-                    ),
-                    // Spacer(),
-                    Column(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PickUp()));
-                          },
-                          child: Container(
-                            margin: EdgeInsets.all(10.0),
-                            padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                CustomText(
-                                  text: "Pick-up",
-                                  color: Colors.black,
-                                  fontsize: 22.0,
-                                  fontweight: FontWeight.bold,
-                                ),
-                                CustomText(
-                                  text: "Self-collect for 50% off",
-                                ),
-                                Spacer(),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    CustomImages(
-                                      url:
-                                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-lPmMvdjwWGtuM_zosDgOKnK6c9tnl4OPTyvde5hqFN0jed7sfFkR3fO2LKjPwXvzRZQ&usqp=CAU",
-                                      height: 110.0,
-                                      width: 110.0,
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              color: Colors.white,
-                            ),
-                            height: 200,
-                            width: 170.0,
-                          ),
-                        ),
-                       
+                      ),
+                
+                
+               
+                
+                
+                
+                
+                
+                SizedBox(width: 10,),
+                
+                
                       
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => PandaGo()));
-                          },
-                          child: Container(
-                            margin: EdgeInsets.all(10.0),
-                             padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
-                            child: Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                  children: [
+                       Expanded(
+                         child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(10),
+                              height: 150,
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                color: Colors.white,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CustomText(text: "Shops",  color: Colors.black, fontsize: 20.0,fontweight: FontWeight.bold,),
+                                  SizedBox(height: 10,),
                                     CustomText(
-                                      text: "pandago",
-                                      color: Colors.black,
-                                      fontsize: 22.0,
-                                      fontweight: FontWeight.bold,
-                                    ),
-                                    SizedBox(
-                                      height: 10,
-                                    ),
-                                    CustomText(
-                                      text: "Send parcels",
-                                    ),
-                                    CustomText(
-                                      text: "in a tap",
-                                    ),
-                                  ],
-                                ),
-                                Spacer(),
-                                CustomImages(
-                                  url:
-                                      "https://images.deliveryhero.io/image/pd-otp-illustrations/v2/FP_PK/rider-pin-icon_PK_PIN.png",
-                                  height: 60.0,
-                                  width: 50.0,
-                                ),
-                              ],
+                                            text: "Top brands to your",
+                                          ),
+                                          SizedBox(height: 2,),
+                                          CustomText(
+                                            text: "door",
+                                          ),
+                                            Spacer(),
+                                   
+                                     Row(
+                                    
+                                       children: [
+                                        Spacer(),
+                                         CustomImages(url: "https://images.deliveryhero.io/image/darkstores/Thailand/pandashop/Shirt.jpg",height:60.0,width: 100.0,),
+                                       ],
+                                       
+                                     ),
+                                          
+                                       
+                                ],
+                                       
+                              ),
+                              
+                            
                             ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              color: Colors.white,
-                            ),
-                            height: 90,
-                            width: 170.0,
-                          ),
-                        ),
-                      ],
-                    )
+                             SizedBox(height: 10,),
+                             InkWell(
+                                onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>PickUp()));
+                              },
+                               child: Container(
+                               
+                                height: 90.0,
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                 color: Colors.white,
+                                ),
+                                child:  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 15,top: 10),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            CustomText(
+                                              text: "Pick-up",
+                                              color: Colors.black,
+                                              fontsize: 20.0,
+                                              fontweight: FontWeight.bold,
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            CustomText(
+                                              text: "Self-collect for",
+                                            ),
+                                            SizedBox(height: 2,),
+                                            CustomText(
+                                              text: "50% off",
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      CustomImages(
+                                        url:
+                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-lPmMvdjwWGtuM_zosDgOKnK6c9tnl4OPTyvde5hqFN0jed7sfFkR3fO2LKjPwXvzRZQ&usqp=CAU",
+                                        height: 90.0,
+                                        width: 60.0,
+                                      ),
+                                    ],
+                                  ),
+                                                         ),
+                             ),
+                             SizedBox(height: 10,),
+                              InkWell(
+                                  onTap: () {
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>PandaGo()));
+                              },
+                                child: Container(
+                                                           
+                                height: 90.0,
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                 color: Colors.white,
+                                ),
+                                child:  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 15,top: 10),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            CustomText(
+                                              text: "Pandago",
+                                              color: Colors.black,
+                                              fontsize: 20.0,
+                                              fontweight: FontWeight.bold,
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            CustomText(
+                                              text: "Send parcels",
+                                            ),
+                                            SizedBox(height: 2,),
+                                            CustomText(
+                                              text: "in a tap",
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      CustomImages(
+                                        url:
+                                            "https://images.deliveryhero.io/image/pd-otp-illustrations/v2/FP_PK/rider-pin-icon_PK_PIN.png",
+                                        height: 90.0,
+                                        width: 60.0,
+                                      ),
+                                    ],
+                                  ),
+                                                          ),
+                              )
+                                       
+                          ],
+                                             ),
+                       )
+                    ],
+                  ),
+                ),
+               
+              ),
+             
+              
+              Padding(
+                padding: const EdgeInsets.only(left: 20,top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    CustomText(text: "Popular restaurants",
+                                  fontsize: 18.0,
+                                  fontweight: FontWeight.bold,),
                   ],
                 ),
               ),
@@ -322,427 +405,222 @@ class FirstPage extends StatelessWidget {
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
+                      padding: const EdgeInsets.only(left: 20,right: 10,top: 15),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CustomText(
-                            text: "Papular restaurants",
-                            fontsize: 25.0,
-                            fontweight: FontWeight.bold,
+                          Stack(
+                                  
+                            children: [
+                              
+                              InkWell(
+                                  onTap: () {
+                                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Papular()));
+                                },
+                                child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 150.0,
+                                          width: 260.0,),
+                              ),
+                                       Positioned(
+                                  
+                                        bottom:10,
+                                        left: 10,
+                                        
+                                         child: Container(
+                                          child: Center(child: CustomText(text: "53 min",fontsize: 12.0,fontweight: FontWeight.bold,)),
+                                         
+                                          height: 22,width: 60,
+                                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                          color: Colors.white),
+                                         ),
+                                       )
+                            ],
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
+                            SizedBox(
+                                height: 10,
+                              ),
+                              CustomText(
+                                text: "Domino's Pizza-Gulshan E Ravi",
+                                fontsize: 13.0,
+                                fontweight: FontWeight.bold,
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              CustomText(
+                                text: "SS . Broast, Wraps & Roll, Burgers,....",
+                                fontsize: 13.0,color: Colors.grey,
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              CustomText(
+                                text: "PKR 50 delivery fee",
+                                fontsize: 11.0,
+                                fontweight: FontWeight.bold,
+                              ), SizedBox(width: 20,),
+                          
                         ],
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
+                      padding: const EdgeInsets.only(left: 10,right: 10,top: 15),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CustomText(
-                            text: "Papular restaurants",
-                            fontsize: 25.0,
-                            fontweight: FontWeight.bold,
+                          Stack(
+                                  
+                            children: [
+                              
+                              InkWell(
+                                  onTap: () {
+                                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Papular()));
+                                },
+                                child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 150.0,
+                                          width: 260.0,),
+                              ),
+                                        Positioned(
+                                          top: 10,
+                                          child: Container(
+                                            child: Center(child: CustomText(text: "Rs. 610 off",fontsize: 12.0,fontweight: FontWeight.bold,color: Colors.white,)),
+                                                height: 22,width: 80,
+                                                
+                                                decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                        
+                                              ),
+                                        ),
+                                       Positioned(
+                                  
+                                        bottom:10,
+                                        left: 10,
+                                        
+                                         child: Container(
+                                          
+                                          child: Center(child: CustomText(text: "53 min",fontsize: 12.0,fontweight: FontWeight.bold,)),
+                                         
+                                          height: 22,width: 60,
+                                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                          color: Colors.white),
+                                         ),
+                                       )
+                            ],
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
+                            SizedBox(
+                                height: 10,
+                              ),
+                              CustomText(
+                                text: "Domino's Pizza-Gulshan E Ravi",
+                                fontsize: 13.0,
+                                fontweight: FontWeight.bold,
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              CustomText(
+                                text: "SS . Broast, Wraps & Roll, Burgers,....",
+                                fontsize: 13.0,
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              CustomText(
+                                text: "PKR 50 delivery fee",
+                                fontsize: 11.0,
+                                fontweight: FontWeight.bold,
+                              ), SizedBox(width: 10,),
+                          
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
+                     Padding(
+                      padding: const EdgeInsets.only(left: 10,right: 10,top: 15),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CustomText(
-                            text: "Papular restaurants",
-                            fontsize: 25.0,
-                            fontweight: FontWeight.bold,
+                          Stack(
+                                  
+                            children: [
+                              
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Papular()));
+                                },
+                                child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 150.0,
+                                          width: 260.0,),
+                              ),
+                                        Positioned(
+                                          top: 10,
+                                          child: Container(
+                                            child: Center(child: CustomText(text: "Rs. 610 off",fontsize: 12.0,fontweight: FontWeight.bold,color: Colors.white,)),
+                                                height: 22,width: 80,
+                                                
+                                                decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                        
+                                              ),
+                                        ),
+                                       Positioned(
+                                  
+                                        bottom:10,
+                                        left: 10,
+                                        
+                                         child: Container(
+                                          
+                                          child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                         
+                                          height: 22,width: 60,
+                                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                          color: Colors.white),
+                                         ),
+                                       )
+                            ],
                           ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
+                            SizedBox(
+                                height: 10,
+                              ),
+                              CustomText(
+                                text: "Domino's Pizza-Gulshan E Ravi",
+                                fontsize: 13.0,
+                                fontweight: FontWeight.bold,
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              CustomText(
+                                text: "SS . Broast, Wraps & Roll, Burgers,....",
+                                fontsize: 13.0,
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              CustomText(
+                                text: "PKR 50 delivery fee",
+                                fontsize: 11.0,
+                                fontweight: FontWeight.bold,
+                              ), SizedBox(width: 20,),
+                          
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text: "Papular restaurants",
-                            fontsize: 25.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text: "Papular restaurants",
-                            fontsize: 25.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text: "Papular restaurants",
-                            fontsize: 25.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text: "Papular restaurants",
-                            fontsize: 25.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text: "Papular restaurants",
-                            fontsize: 25.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
+                  
                   ],
                 ),
               ),
+              
+            
+              
+
+
+           
               SizedBox(
                 height: 30,
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 20),
+                padding: const EdgeInsets.only(left: 20, top: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     CustomText(
                       text: "Cuisines",
-                      fontsize: 25.0,
+                      fontsize: 18.0,
                       fontweight: FontWeight.bold,
                     ),
                   ],
@@ -753,7 +631,7 @@ class FirstPage extends StatelessWidget {
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 20),
+                      padding: const EdgeInsets.only(left: 20, ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -774,16 +652,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                      height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   ),
                                   SizedBox(
@@ -799,16 +677,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                       height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   )
                                 ],
@@ -831,16 +709,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                       height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   ),
                                   SizedBox(
@@ -856,16 +734,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                      height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   )
                                 ],
@@ -888,16 +766,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                       height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   ),
                                   SizedBox(
@@ -913,16 +791,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                      height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   )
                                 ],
@@ -945,16 +823,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                       height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   ),
                                   SizedBox(
@@ -970,16 +848,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                        height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   )
                                 ],
@@ -1002,16 +880,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                       height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   ),
                                   SizedBox(
@@ -1027,16 +905,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                      height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   )
                                 ],
@@ -1059,16 +937,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                      height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   ),
                                   SizedBox(
@@ -1084,16 +962,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                       height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   )
                                 ],
@@ -1116,16 +994,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                       height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   ),
                                   SizedBox(
@@ -1141,16 +1019,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                       height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   )
                                 ],
@@ -1173,16 +1051,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                      height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   ),
                                   SizedBox(
@@ -1198,16 +1076,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                      height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   )
                                 ],
@@ -1230,16 +1108,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                      height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   ),
                                   SizedBox(
@@ -1255,16 +1133,16 @@ class FirstPage extends StatelessWidget {
                                       },
                                       child: CustomImages(
                                         url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
+                                            "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                      height: 80.0,
+                                        width: 70.0,
                                       )),
                                   SizedBox(
                                     height: 10,
                                   ),
                                   CustomText(
                                     text: "Pasta",
-                                    fontsize: 20.0,
+                                    fontsize: 14.0,
                                     fontweight: FontWeight.bold,
                                   )
                                 ],
@@ -1272,59 +1150,62 @@ class FirstPage extends StatelessWidget {
                               SizedBox(
                                 width: 20,
                               ),
-                              Column(
-                                children: [
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                  InkWell(
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    Cuisines()));
-                                      },
-                                      child: CustomImages(
-                                        url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
-                                      )),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  CustomText(
-                                    text: "Pasta",
-                                    fontsize: 20.0,
-                                    fontweight: FontWeight.bold,
-                                  ),
-                                  SizedBox(
-                                    height: 30,
-                                  ),
-                                  InkWell(
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    Cuisines()));
-                                      },
-                                      child: CustomImages(
-                                        url:
-                                            "https://image.pngaaa.com/471/4109471-middle.png",
-                                        height: 100.0,
-                                        width: 100.0,
-                                      )),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  CustomText(
-                                    text: "Pasta",
-                                    fontsize: 20.0,
-                                    fontweight: FontWeight.bold,
-                                  )
-                                ],
+                              Padding(
+                                padding: const EdgeInsets.only(right: 20),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    InkWell(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Cuisines()));
+                                        },
+                                        child: CustomImages(
+                                          url:
+                                              "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                         height: 80.0,
+                                        width: 70.0,
+                                        )),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    CustomText(
+                                      text: "Pasta",
+                                      fontsize: 14.0,
+                                      fontweight: FontWeight.bold,
+                                    ),
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                    InkWell(
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Cuisines()));
+                                        },
+                                        child: CustomImages(
+                                          url:
+                                              "https://images.radio.com/aiu-media/spaghetti-800x450-f8b9dc08-9e74-4bf7-95a7-6cd392d7d760.jpg",
+                                          height: 80.0,
+                                        width: 70.0,
+                                        )),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    CustomText(
+                                      text: "Pasta",
+                                      fontsize: 14.0,
+                                      fontweight: FontWeight.bold,
+                                    )
+                                  ],
+                                ),
                               ),
                             ],
                           )
@@ -1334,305 +1215,9 @@ class FirstPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 40,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: "Popular for lunch",
-                      fontsize: 25.0,
-                      fontweight: FontWeight.bold,
-                    ),
-                  ],
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 20,
-                          ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Papular()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU",
-                                height: 180.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Gulshan E Ravi",
-                            fontsize: 22.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Broast, Wraps & Roll, Burgers,....",
-                            fontsize: 22.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "PKR 50 delivery fee",
-                            fontsize: 17.0,
-                            fontweight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            
+             
+               
               SizedBox(
                 height: 30,
               ),
@@ -1643,19 +1228,103 @@ class FirstPage extends StatelessWidget {
                   children: [
                     CustomText(
                       text: "Popular shops",
-                      fontsize: 25.0,
+                      fontsize: 18.0,
                       fontweight: FontWeight.bold,
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 20),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Column(
+                padding: const EdgeInsets.only(left: 20, top: 20,right: 10),
+                child: Row(
+                  children: [
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PickUp()));
+                              },
+                              child: CustomImages(
+                                url:
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVshPghsDACqivuYVKO1TDsmYFZycPxe62phwOBWWWsl-b4ct00HpxOjokVzSlLkwkAxQ&usqp=CAU",
+                                height: 100.0,
+                                width: 110.0,
+                              )),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CustomText(
+                            text: "Edenrobe (Laqbal",
+                            fontsize: 13.0,
+                            fontweight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CustomText(
+                            text: "Town)",
+                            fontsize: 13.0,
+                            fontweight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CustomText(
+                            text: "35 mins",
+                          ),
+                        ]),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => PickUp()));
+                              },
+                              child: CustomImages(
+                                url:
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVshPghsDACqivuYVKO1TDsmYFZycPxe62phwOBWWWsl-b4ct00HpxOjokVzSlLkwkAxQ&usqp=CAU",
+                                height: 100.0,
+                                width: 110.0,
+                              )),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CustomText(
+                            text: "Edenrobe (Laqbal",
+                            fontsize: 13.0,
+                            fontweight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CustomText(
+                            text: "Town)",
+                            fontsize: 13.0,
+                            fontweight: FontWeight.bold,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CustomText(
+                            text: "35 mins",
+                          ),
+                        ]),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             InkWell(
@@ -1669,14 +1338,14 @@ class FirstPage extends StatelessWidget {
                                   url:
                                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVshPghsDACqivuYVKO1TDsmYFZycPxe62phwOBWWWsl-b4ct00HpxOjokVzSlLkwkAxQ&usqp=CAU",
                                   height: 100.0,
-                                  width: 120.0,
+                                  width: 110.0,
                                 )),
                             SizedBox(
                               height: 5,
                             ),
                             CustomText(
                               text: "Edenrobe (Laqbal",
-                              fontsize: 15.0,
+                              fontsize: 13.0,
                               fontweight: FontWeight.bold,
                             ),
                             SizedBox(
@@ -1684,7 +1353,7 @@ class FirstPage extends StatelessWidget {
                             ),
                             CustomText(
                               text: "Town)",
-                              fontsize: 15.0,
+                              fontsize: 13.0,
                               fontweight: FontWeight.bold,
                             ),
                             SizedBox(
@@ -1694,92 +1363,9 @@ class FirstPage extends StatelessWidget {
                               text: "35 mins",
                             ),
                           ]),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => PickUp()));
-                                },
-                                child: CustomImages(
-                                  url:
-                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVshPghsDACqivuYVKO1TDsmYFZycPxe62phwOBWWWsl-b4ct00HpxOjokVzSlLkwkAxQ&usqp=CAU",
-                                  height: 100.0,
-                                  width: 120.0,
-                                )),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            CustomText(
-                              text: "Edenrobe (Laqbal",
-                              fontsize: 15.0,
-                              fontweight: FontWeight.bold,
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            CustomText(
-                              text: "Town)",
-                              fontsize: 15.0,
-                              fontweight: FontWeight.bold,
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            CustomText(
-                              text: "35 mins",
-                            ),
-                          ]),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InkWell(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => PickUp()));
-                                },
-                                child: CustomImages(
-                                  url:
-                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVshPghsDACqivuYVKO1TDsmYFZycPxe62phwOBWWWsl-b4ct00HpxOjokVzSlLkwkAxQ&usqp=CAU",
-                                  height: 100.0,
-                                  width: 120.0,
-                                )),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            CustomText(
-                              text: "Edenrobe (Laqbal",
-                              fontsize: 15.0,
-                              fontweight: FontWeight.bold,
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            CustomText(
-                              text: "Town)",
-                              fontsize: 15.0,
-                              fontweight: FontWeight.bold,
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            CustomText(
-                              text: "35 mins",
-                            ),
-                          ]),
-                    ],
-                  ),
+                    ),
+                   
+                  ],
                 ),
               ),
               SizedBox(
@@ -1792,237 +1378,240 @@ class FirstPage extends StatelessWidget {
                   children: [
                     CustomText(
                       text: "Pick up at a restaurant near you",
-                      fontsize: 20.0,
+                      fontsize: 18.0,
                       fontweight: FontWeight.bold,
                     ),
                   ],
                 ),
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 30),
-                  child: Row(
-                    children: [
-                      Column(
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Restaurant()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://images.deliveryhero.io/image/fd-pk/LH/p5sq-hero.jpg",
-                                height: 100.0,
-                                width: 400.0,
-                              ))
-                        ],
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Restaurant()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://images.deliveryhero.io/image/fd-pk/LH/p5sq-hero.jpg",
-                                height: 100.0,
-                                width: 400.0,
-                              ))
-                        ],
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Restaurant()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://images.deliveryhero.io/image/fd-pk/LH/p5sq-hero.jpg",
-                                height: 100.0,
-                                width: 400.0,
-                              ))
-                        ],
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Restaurant()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://images.deliveryhero.io/image/fd-pk/LH/p5sq-hero.jpg",
-                                height: 100.0,
-                                width: 400.0,
-                              ))
-                        ],
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      Column(
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Restaurant()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://images.deliveryhero.io/image/fd-pk/LH/p5sq-hero.jpg",
-                                height: 100.0,
-                                width: 400.0,
-                              ))
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
+             
               Padding(
-                padding: const EdgeInsets.only(left: 20, top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: "Your daily deals",
-                      fontsize: 25.0,
-                      fontweight: FontWeight.bold,
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, top: 30),
+                padding: const EdgeInsets.only(left: 20,top: 10,right: 20),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => DailyDeal()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOHGgSfX_yNR32zjdP2eqYgHsh7T47Ozc3SFFvrGtcoP1hDBEy0JSNIoebsSgZ9fyxYWg&usqp=CAU",
-                              )),
+                            onTap: () {
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>Restaurant()));
+                            },
+                            child: Container(
+                              child: Column(
+                                
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                 Padding(
+                                   padding: const EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 5),
+                                   child: Stack(
+                                    children: [
+                                      CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/LH/p5sq-hero.jpg",
+                                                    height: 130.0,
+                                                    width: 280.0,),
+                                                    Positioned(
+                                                      
+                                                            
+                                                            top: 10,
+                                                            
+                                                             child: Container(
+                                                              child: Center(child: CustomText(text: "Panda High Street",fontsize: 12.0,fontweight: FontWeight.bold,color: Colors.white,)),
+                                                             
+                                                              height: 22,width: 110,
+                                                              decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100)),
+                                                              color: Color(0xffe31b70)),
+                                                             ),
+                                                           ),
+                                    ],
+                                   ),
+                                 ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10,right: 10),
+                                    child: Row(
+                                      
+                                      children: [
+                                        CustomText(
+                                          text: "Pizza - Allama Iqbal Town",fontsize: 12.0,fontweight: FontWeight.bold,
+                                        ),
+                                        Spacer(),
+                                        CustomIcons(icon: Icons.star_outline,size: 20.0,color: Colors.orange[700],),
+                                        SizedBox(width: 5,),
+                                         CustomText(
+                                          text: "(+1400)",fontsize: 13.0,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                 
+                                   Padding(
+                                     padding: const EdgeInsets.only(left: 10),
+                                     child: CustomText(
+                                          text: "3.5km away",fontsize: 13.0,color: Colors.grey,
+                                        ),
+                                   ),
+                                ],
+                              ),
+                               
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.white,),
+                              height: 190,width: 300,
+                             
+                            ),
+                          ),
                         ],
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
+                       Padding(
+                         padding: const EdgeInsets.all(10),
+                         child: Column(
+                          children: [
+                            InkWell(
+                                onTap: () {
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>Restaurant()));
+                            },
+                              child: Container(
+                                child: Column(
+                                  
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                   Padding(
+                                     padding: const EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 5),
+                                     child: Stack(
+                                      children: [
+                                        CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/LH/p5sq-hero.jpg",
+                                                      height: 130.0,
+                                                      width: 280.0,),
+                                                      Positioned(
+                                                        
+                                                              
+                                                              top: 10,
+                                                              
+                                                               child: Container(
+                                                                child: Center(child: CustomText(text: "Panda High Street",fontsize: 12.0,fontweight: FontWeight.bold,color: Colors.white,)),
+                                                               
+                                                                height: 22,width: 110,
+                                                                decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100)),
+                                                                color: Color(0xffe31b70)),
+                                                               ),
+                                                             ),
+                                      ],
+                                     ),
+                                   ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10,right: 10),
+                                      child: Row(
+                                        
+                                        children: [
+                                          CustomText(
+                                            text: "Pizza - Allama Iqbal Town",fontsize: 12.0,fontweight: FontWeight.bold,
+                                          ),
+                                          Spacer(),
+                                          CustomIcons(icon: Icons.star_outline,size: 20.0,color: Colors.orange[700],),
+                                          SizedBox(width: 5,),
+                                           CustomText(
+                                            text: "(+1400)",fontsize: 13.0,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                   
+                                     Padding(
+                                       padding: const EdgeInsets.only(left: 10),
+                                       child: CustomText(
+                                            text: "3.5km away",fontsize: 13.0,color: Colors.grey,
+                                          ),
+                                     ),
+                                  ],
+                                ),
+                                 
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.white,),
+                                height: 190,width: 300,
+                               
+                              ),
+                            ),
+                          ],
+                                             ),
+                       ),
+                        Column(
+                         children: [
+                           InkWell(
                               onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => DailyDeal()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOHGgSfX_yNR32zjdP2eqYgHsh7T47Ozc3SFFvrGtcoP1hDBEy0JSNIoebsSgZ9fyxYWg&usqp=CAU",
-                              )),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => DailyDeal()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOHGgSfX_yNR32zjdP2eqYgHsh7T47Ozc3SFFvrGtcoP1hDBEy0JSNIoebsSgZ9fyxYWg&usqp=CAU",
-                              )),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => DailyDeal()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOHGgSfX_yNR32zjdP2eqYgHsh7T47Ozc3SFFvrGtcoP1hDBEy0JSNIoebsSgZ9fyxYWg&usqp=CAU",
-                              )),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => DailyDeal()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOHGgSfX_yNR32zjdP2eqYgHsh7T47Ozc3SFFvrGtcoP1hDBEy0JSNIoebsSgZ9fyxYWg&usqp=CAU",
-                              )),
-                        ],
-                      ),
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>Restaurant()));
+                            },
+                             child: Container(
+                               child: Column(
+                                 
+                                 crossAxisAlignment: CrossAxisAlignment.start,
+                                 children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 5),
+                                    child: Stack(
+                                     children: [
+                                       CustomImages(url: "https://images.deliveryhero.io/image/fd-pk/LH/p5sq-hero.jpg",
+                                                     height: 130.0,
+                                                     width: 280.0,),
+                                                     Positioned(
+                                                       
+                                                             
+                                                             top: 10,
+                                                             
+                                                              child: Container(
+                                                               child: Center(child: CustomText(text: "Panda High Street",fontsize: 12.0,fontweight: FontWeight.bold,color: Colors.white,)),
+                                                              
+                                                               height: 22,width: 110,
+                                                               decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100)),
+                                                               color: Color(0xffe31b70)),
+                                                              ),
+                                                            ),
+                                     ],
+                                    ),
+                                  ),
+                                   Padding(
+                                     padding: const EdgeInsets.only(left: 10,right: 10),
+                                     child: Row(
+                                       
+                                       children: [
+                                         CustomText(
+                                           text: "Pizza - Allama Iqbal Town",fontsize: 12.0,fontweight: FontWeight.bold,
+                                         ),
+                                         Spacer(),
+                                         CustomIcons(icon: Icons.star_outline,size: 20.0,color: Colors.orange[700],),
+                                         SizedBox(width: 5,),
+                                          CustomText(
+                                           text: "(+1400)",fontsize: 13.0,
+                                         ),
+                                       ],
+                                     ),
+                                   ),
+                                  
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 10),
+                                      child: CustomText(
+                                           text: "3.5km away",fontsize: 13.0,color: Colors.grey,
+                                         ),
+                                    ),
+                                 ],
+                               ),
+                                
+                               decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: Colors.white,),
+                               height: 190,width: 300,
+                              
+                             ),
+                           ),
+                         ],
+                                            ),
                     ],
                   ),
                 ),
               ),
+
+
+
+
+
+
+
+              
+            
+             
               SizedBox(
                 height: 20,
               ),
@@ -2033,7 +1622,7 @@ class FirstPage extends StatelessWidget {
                   children: [
                     CustomText(
                       text: "Shops",
-                      fontsize: 25.0,
+                      fontsize: 18.0,
                       fontweight: FontWeight.bold,
                     ),
                   ],
@@ -2044,7 +1633,7 @@ class FirstPage extends StatelessWidget {
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 20),
+                      padding: const EdgeInsets.only(top: 20,left: 20,),
                       child: Column(
                         children: [
                           InkWell(
@@ -2057,22 +1646,22 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://static7.depositphotos.com/1007989/773/i/450/depositphotos_7734833-stock-photo-capsule.jpg",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: " Capsule",
-                            fontsize: 20.0,
+                            fontsize: 15.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
                       ),
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
@@ -2088,22 +1677,22 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://static7.depositphotos.com/1007989/773/i/450/depositphotos_7734833-stock-photo-capsule.jpg",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: " Capsule",
-                            fontsize: 20.0,
+                            fontsize: 15.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
                       ),
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
@@ -2119,22 +1708,22 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://static7.depositphotos.com/1007989/773/i/450/depositphotos_7734833-stock-photo-capsule.jpg",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: " Capsule",
-                            fontsize: 20.0,
+                            fontsize: 15.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
                       ),
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
@@ -2150,25 +1739,25 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://static7.depositphotos.com/1007989/773/i/450/depositphotos_7734833-stock-photo-capsule.jpg",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: " Capsule",
-                            fontsize: 20.0,
+                            fontsize: 15.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
                       ),
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 10,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 20),
+                      padding: const EdgeInsets.only( top: 20,right: 20),
                       child: Column(
                         children: [
                           InkWell(
@@ -2181,15 +1770,15 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://static7.depositphotos.com/1007989/773/i/450/depositphotos_7734833-stock-photo-capsule.jpg",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: " Capsule",
-                            fontsize: 20.0,
+                            fontsize: 15.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
@@ -2198,6 +1787,155 @@ class FirstPage extends StatelessWidget {
                   ],
                 ),
               ),
+               SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20,right: 10,top: 40),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Stack(
+                                  
+                            children: [
+                              
+                              InkWell(
+                                  onTap: () {
+                                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Pandapro()));
+                                },
+                                child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 180.0,
+                                          width: 260.0,),
+                              ),
+                                       Positioned(
+                                  
+                                        bottom:10,
+                                        left: 10,
+                                        
+                                         child: Container(
+                                          child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                         
+                                          height: 30,width: 65,
+                                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                          color: Colors.grey[300]),
+                                         ),
+                                       )
+                            ],
+                          ),
+                                                    
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20,right: 10,top: 40),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Stack(
+                                  
+                            children: [
+                              
+                              InkWell(
+                                  onTap: () {
+                                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Pandapro()));
+                                },
+                                child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 180.0,
+                                          width: 260.0,),
+                              ),
+                                        Positioned(
+                                          top: 10,
+                                          child: Container(
+                                            child: Center(child: CustomText(text: "Rs. 610 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                height: 32,width: 100,
+                                                
+                                                decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                        
+                                              ),
+                                        ),
+                                       Positioned(
+                                  
+                                        bottom:10,
+                                        left: 10,
+                                        
+                                         child: Container(
+                                          
+                                          child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                         
+                                          height: 30,width: 65,
+                                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                          color: Colors.grey[300]),
+                                         ),
+                                       )
+                            ],
+                          ),
+                           
+                        ],
+                      ),
+                    ),
+                     Padding(
+                      padding: const EdgeInsets.only(left: 20,right: 20,top: 40),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Stack(
+                                  
+                            children: [
+                              
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Pandapro()));
+                                },
+                                child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 180.0,
+                                          width: 260.0,),
+                              ),
+                                        Positioned(
+                                          top: 10,
+                                          child: Container(
+                                            child: Center(child: CustomText(text: "Rs. 610 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                height: 32,width: 100,
+                                                
+                                                decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                        
+                                              ),
+                                        ),
+                                       Positioned(
+                                  
+                                        bottom:10,
+                                        left: 10,
+                                        
+                                         child: Container(
+                                          
+                                          child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                         
+                                          height: 30,width: 65,
+                                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                          color: Colors.grey[300]),
+                                         ),
+                                       )
+                            ],
+                          ),
+                           
+                        ],
+                      ),
+                    ),
+                  
+                  ],
+                ),
+              ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               SizedBox(
                 height: 20,
               ),
@@ -2208,7 +1946,7 @@ class FirstPage extends StatelessWidget {
                   children: [
                     CustomText(
                       text: "Pandamart",
-                      fontsize: 25.0,
+                      fontsize: 18.0,
                       fontweight: FontWeight.bold,
                     ),
                   ],
@@ -2232,22 +1970,22 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://www.mirchimasalay.com/cdn/shop/products/Nestle_Nido_Dry_Whole_MIlk_900_Grams_812fad36-9dba-4733-aa0c-072f022ed481_800x.jpg?v=1626401159",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: "Nestle Nido",
-                            fontsize: 20.0,
+                            fontsize: 14.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
                       ),
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
@@ -2263,22 +2001,22 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://www.mirchimasalay.com/cdn/shop/products/Nestle_Nido_Dry_Whole_MIlk_900_Grams_812fad36-9dba-4733-aa0c-072f022ed481_800x.jpg?v=1626401159",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: "Nestle Nido",
-                            fontsize: 20.0,
+                            fontsize: 14.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
                       ),
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
@@ -2294,22 +2032,22 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://www.mirchimasalay.com/cdn/shop/products/Nestle_Nido_Dry_Whole_MIlk_900_Grams_812fad36-9dba-4733-aa0c-072f022ed481_800x.jpg?v=1626401159",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: "Nestle Nido",
-                            fontsize: 20.0,
+                            fontsize: 14.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
                       ),
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 10,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
@@ -2325,25 +2063,25 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://www.mirchimasalay.com/cdn/shop/products/Nestle_Nido_Dry_Whole_MIlk_900_Grams_812fad36-9dba-4733-aa0c-072f022ed481_800x.jpg?v=1626401159",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: "Nestle Nido",
-                            fontsize: 20.0,
+                            fontsize: 14.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
                       ),
                     ),
                     SizedBox(
-                      width: 30,
+                      width: 10,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20),
+                      padding: const EdgeInsets.only(top: 20,right: 20),
                       child: Column(
                         children: [
                           InkWell(
@@ -2356,15 +2094,15 @@ class FirstPage extends StatelessWidget {
                               child: CustomImages(
                                 url:
                                     "https://www.mirchimasalay.com/cdn/shop/products/Nestle_Nido_Dry_Whole_MIlk_900_Grams_812fad36-9dba-4733-aa0c-072f022ed481_800x.jpg?v=1626401159",
-                                height: 100.0,
-                                width: 100.0,
+                                height: 80.0,
+                                width: 80.0,
                               )),
                           SizedBox(
                             height: 10,
                           ),
                           CustomText(
                             text: "Nestle Nido",
-                            fontsize: 20.0,
+                            fontsize: 14.0,
                             fontweight: FontWeight.bold,
                           )
                         ],
@@ -2376,226 +2114,7 @@ class FirstPage extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, top: 50),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomText(
-                          text: "Dine in with pandapro offers near you",
-                          fontsize: 20.0,
-                          fontweight: FontWeight.bold,
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        CustomText(
-                          text:
-                              "Exclusive offers with pandapro when you dine in",
-                          fontsize: 15.0,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Pandapro()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_iz6kEFPtW__im32K-OR9mS_lW7JN51erWQ&usqp=CAU",
-                                height: 200.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Allama Iqbal Town",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          CustomText(
-                            text: "3.5km away",
-                            fontsize: 20.0,
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Pandapro()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_iz6kEFPtW__im32K-OR9mS_lW7JN51erWQ&usqp=CAU",
-                                height: 200.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Allama Iqbal Town",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          CustomText(
-                            text: "3.5km away",
-                            fontsize: 20.0,
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Pandapro()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_iz6kEFPtW__im32K-OR9mS_lW7JN51erWQ&usqp=CAU",
-                                height: 200.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Allama Iqbal Town",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          CustomText(
-                            text: "3.5km away",
-                            fontsize: 20.0,
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Pandapro()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_iz6kEFPtW__im32K-OR9mS_lW7JN51erWQ&usqp=CAU",
-                                height: 200.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Allama Iqbal Town",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          CustomText(
-                            text: "3.5km away",
-                            fontsize: 20.0,
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Pandapro()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_iz6kEFPtW__im32K-OR9mS_lW7JN51erWQ&usqp=CAU",
-                                height: 200.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Domino's Pizza-Allama Iqbal Town",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          CustomText(
-                            text: "3.5km away",
-                            fontsize: 20.0,
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+             
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 50),
                 child: InkWell(
@@ -2605,6 +2124,7 @@ class FirstPage extends StatelessWidget {
                   },
                   child: Container(
                     decoration: BoxDecoration(
+                       borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                       color: Colors.black,
                     )),
@@ -2616,47 +2136,50 @@ class FirstPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 10, top: 15),
+                              padding: const EdgeInsets.only(left: 20, top: 22),
                               child: CustomText(
                                 text: "Want 10 FREE deliveri...",
-                                fontsize: 20.0,
+                                fontsize: 13.0,
                                 fontweight: FontWeight.bold,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 10, top: 10),
+                              padding: const EdgeInsets.only(left: 20, top: 5),
                               child: CustomText(
                                 text: "Join the pro club!",
-                                fontsize: 20.0,
+                                fontsize: 13.0,
                               ),
                             )
                           ],
                         ),
-                        Spacer(),
-                        CustomImages(
-                          url:
-                              "https://miro.medium.com/v2/resize:fit:1400/1*u7FtKnh0YEUs9uY1oOR_6g.png",
-                          width: 100.0,
+                       Spacer(),
+                       
+                        Padding(
+                          padding: const EdgeInsets.only(right: 20),
+                          child: CustomImages(
+                            url:
+                                "https://miro.medium.com/v2/resize:fit:1400/1*u7FtKnh0YEUs9uY1oOR_6g.png",
+                            width: 100.0,height: 70.0,
+                          ),
                         )
                       ],
                     ),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
+            
               Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20, top: 60),
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
                 child: Row(
                   children: [
-                    CustomImages(
+                     CustomImages(
                       url:
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlB4FZg-4ukztLI0Zo-wJ_8E_3KCEcjowxwQ&usqp=CAU",
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9YIJ6AriIsMaLvJHqX3C5oo-vPVBtddIbvrx8zcAAJA&s",
                       width: 100.0,
                     ),
+                   
                     Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.only(left: 10,right: 20),
                       child: InkWell(
                         onTap: () {
                           Navigator.push(
@@ -2669,7 +2192,7 @@ class FirstPage extends StatelessWidget {
                           children: [
                             CustomText(
                               text: "Pandamart-Mozang Chunn...",
-                              fontsize: 18.0,
+                              fontsize: 15.0,
                               fontweight: FontWeight.bold,
                             ),
                             Row(
@@ -2680,25 +2203,28 @@ class FirstPage extends StatelessWidget {
                                 SizedBox(
                                   height: 20,
                                 ),
+                                 SizedBox(
+                                  width: 5,
+                                ),
                                 CustomText(
                                   text: "30 mins",
-                                  fontsize: 18.0,
+                                  fontsize: 15.0,
                                 ),
                                 SizedBox(
-                                  width: 100,
+                                  width: 120,
                                 ),
                                 CustomIcons(
                                   icon: Icons.chevron_right,
-                                  size: 30.0,
+                                  size: 25.0,
                                 ),
                               ],
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 10,
                             ),
                             CustomText(
                               text: "BUYFRESH FOR 25% OF...",
-                              fontsize: 18.0,
+                              fontsize: 15.0,
                             ),
                           ],
                         ),
@@ -2707,216 +2233,7 @@ class FirstPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, top: 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Olpers()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://cdn-jnopp.nitrocdn.com/PzAbLnqxZXZriCcJThaqEIRCIPcccgyO/assets/images/optimized/rev-abafd76/others.olpersmart.pk/wp-content/uploads/2020/11/Olpers-UHT-250ml-TBA.jpg",
-                                height: 100.0,
-                                width: 100.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Rs. 280.00",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Olpers's Milk Full Cream",
-                          ),
-                          CustomText(
-                            text: "1L",
-                            fontsize: 15.0,
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Olpers()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://cdn-jnopp.nitrocdn.com/PzAbLnqxZXZriCcJThaqEIRCIPcccgyO/assets/images/optimized/rev-abafd76/others.olpersmart.pk/wp-content/uploads/2020/11/Olpers-UHT-250ml-TBA.jpg",
-                                height: 100.0,
-                                width: 100.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Rs. 280.00",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Olpers's Milk Full Cream",
-                          ),
-                          CustomText(
-                            text: "1L",
-                            fontsize: 15.0,
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Olpers()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://cdn-jnopp.nitrocdn.com/PzAbLnqxZXZriCcJThaqEIRCIPcccgyO/assets/images/optimized/rev-abafd76/others.olpersmart.pk/wp-content/uploads/2020/11/Olpers-UHT-250ml-TBA.jpg",
-                                height: 100.0,
-                                width: 100.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Rs. 280.00",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Olpers's Milk Full Cream",
-                          ),
-                          CustomText(
-                            text: "1L",
-                            fontsize: 15.0,
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomImages(
-                            url:
-                                "https://cdn-jnopp.nitrocdn.com/PzAbLnqxZXZriCcJThaqEIRCIPcccgyO/assets/images/optimized/rev-abafd76/others.olpersmart.pk/wp-content/uploads/2020/11/Olpers-UHT-250ml-TBA.jpg",
-                            height: 100.0,
-                            width: 100.0,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Rs. 280.00",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Olpers's Milk Full Cream",
-                          ),
-                          CustomText(
-                            text: "1L",
-                            fontsize: 15.0,
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Olpers()));
-                              },
-                              child: CustomImages(
-                                url:
-                                    "https://cdn-jnopp.nitrocdn.com/PzAbLnqxZXZriCcJThaqEIRCIPcccgyO/assets/images/optimized/rev-abafd76/others.olpersmart.pk/wp-content/uploads/2020/11/Olpers-UHT-250ml-TBA.jpg",
-                                height: 100.0,
-                                width: 100.0,
-                              )),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Rs. 280.00",
-                            fontsize: 20.0,
-                            fontweight: FontWeight.bold,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomText(
-                            text: "Olpers's Milk Full Cream",
-                          ),
-                          CustomText(
-                            text: "1L",
-                            fontsize: 15.0,
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+           
               Padding(
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 50),
                 child: InkWell(
@@ -2928,6 +2245,7 @@ class FirstPage extends StatelessWidget {
                   },
                   child: Container(
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
                         border: Border.all(
                       color: Colors.black,
                     )),
@@ -2939,18 +2257,18 @@ class FirstPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 10, top: 15),
+                              padding: const EdgeInsets.only(left: 15, top: 20),
                               child: CustomText(
                                 text: "Earn a Rs350 voucher",
-                                fontsize: 20.0,
+                                fontsize: 15.0,
                                 fontweight: FontWeight.bold,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(left: 10, top: 10),
+                              padding: const EdgeInsets.only(left: 15, top: 10),
                               child: CustomText(
                                 text: "when you refer a friend",
-                                fontsize: 17.0,
+                                fontsize: 12.0,
                               ),
                             )
                           ],
@@ -2973,6 +2291,7 @@ class FirstPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                 child: Container(
                   decoration: BoxDecoration(
+                     borderRadius: BorderRadius.circular(10),
                       border: Border.all(
                     color: Colors.black,
                   )),
@@ -2984,18 +2303,18 @@ class FirstPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 15),
+                            padding: const EdgeInsets.only(left: 15, top: 20),
                             child: CustomText(
                               text: "Try panda rewards!",
-                              fontsize: 20.0,
+                              fontsize: 15.0,
                               fontweight: FontWeight.bold,
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 10),
+                            padding: const EdgeInsets.only(left: 15, top: 10),
                             child: CustomText(
                               text: "Earn points and win prizes",
-                              fontsize: 17.0,
+                              fontsize: 12.0,
                             ),
                           )
                         ],
@@ -3031,7 +2350,7 @@ class CustomDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Color(0xffDF486F),
+              color: Color(0xffe31b70),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -3046,7 +2365,7 @@ class CustomDrawer extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 100.0),
                       child: CustomText(
-                        text: "Log in / Create account", fontsize: 20.0,
+                        text: "Log in / Create account", fontsize: 15.0,
                         color: Colors.white,
                         fontweight: FontWeight.bold,
                         // fontsize: 20,
@@ -3062,9 +2381,10 @@ class CustomDrawer extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => JoinClub()));
               },
               child: CustomText(
+                
                 text: "Pro",
-                fontsize: 17.0,
-                color: Color(0xffDF486F),
+                fontsize: 15.0,
+                color: Color(0xffe31b70),
               ),
             ),
             title: InkWell(
@@ -3074,7 +2394,8 @@ class CustomDrawer extends StatelessWidget {
                 },
                 child: CustomText(
                   text: "Become a pandapro",
-                  fontsize: 18.0,
+                  fontsize: 15.0,
+                  
                 )),
           ),
           ListTile(
@@ -3085,8 +2406,8 @@ class CustomDrawer extends StatelessWidget {
               },
               child: CustomIcons(
                 icon: Icons.person_2_outlined,
-                size: 25.0,
-                color: Color(0xffDF486F),
+                size: 20.0,
+                color: Color(0xffe31b70),
               ),
             ),
             title: InkWell(
@@ -3096,7 +2417,7 @@ class CustomDrawer extends StatelessWidget {
                 },
                 child: CustomText(
                   text: "View profile",
-                  fontsize: 17.0,
+                  fontsize: 15.0,
                 )),
           ),
           ListTile(
@@ -3107,8 +2428,8 @@ class CustomDrawer extends StatelessWidget {
               },
               child: CustomIcons(
                 icon: Icons.help_center_outlined,
-                size: 25.0,
-                color: Color(0xffDF486F),
+                size: 20.0,
+                color: Color(0xffe31b70),
               ),
             ),
             title: InkWell(
@@ -3118,7 +2439,7 @@ class CustomDrawer extends StatelessWidget {
                 },
                 child: CustomText(
                   text: "Help center",
-                  fontsize: 17.0,
+                  fontsize: 15.0,
                 )),
           ),
           ListTile(
@@ -3131,8 +2452,8 @@ class CustomDrawer extends StatelessWidget {
               },
               child: CustomIcons(
                 icon: Icons.lens_blur,
-                size: 30.0,
-                color: Color(0xffDF486F),
+                size: 20.0,
+                color: Color(0xffe31b70),
               ),
             ),
             title: InkWell(
@@ -3144,7 +2465,7 @@ class CustomDrawer extends StatelessWidget {
                 },
                 child: CustomText(
                   text: "foodpanda for business",
-                  fontsize: 17.0,
+                  fontsize: 15.0,
                 )),
           ),
           ListTile(
@@ -3155,7 +2476,7 @@ class CustomDrawer extends StatelessWidget {
               },
               child: CustomIcons(
                 icon: Icons.card_giftcard_outlined,
-                size: 25.0,
+                size: 20.0,
                 color: Color(0xffDF486F),
               ),
             ),
@@ -3166,7 +2487,7 @@ class CustomDrawer extends StatelessWidget {
                 },
                 child: CustomText(
                   text: "Invite friends",
-                  fontsize: 17.0,
+                  fontsize: 15.0,
                 )),
           ),
           Divider(
@@ -3181,7 +2502,7 @@ class CustomDrawer extends StatelessWidget {
                 },
                 child: CustomText(
                   text: "Settings",
-                  fontsize: 20.0,
+                  fontsize: 15.0,
                 )),
           ),
           SizedBox(
@@ -3195,7 +2516,7 @@ class CustomDrawer extends StatelessWidget {
                 },
                 child: CustomText(
                   text: "Terns & Conditions / Privacy.",
-                  fontsize: 20.0,
+                  fontsize: 15.0,
                 )),
           ),
         ],

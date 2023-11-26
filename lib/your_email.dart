@@ -20,7 +20,7 @@ class YourEmail extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
            children: [
             Container(
-              color: Color(0xffDF486F,),
+              color: Color(0xffe31b70),
               height: 60.0,
             ),
             
@@ -33,9 +33,9 @@ class YourEmail extends StatelessWidget {
                         onTap: () {
                           Navigator.push(context,MaterialPageRoute(builder: (context)=>loginscreen()));
                         },
-                        child: CustomIcons(icon: Icons.arrow_back,size: 35.0,color: Color(0xffDF486F,),)),
+                        child: CustomIcons(icon: Icons.arrow_back,size: 25.0,color: Color(0xffe31b70),)),
                      Spacer(),
-                      CustomText(text: "Continue",fontsize: 20.0,fontweight: FontWeight.normal,color: Colors.black,)
+                      CustomText(text: "Continue",fontsize: 18.0,fontweight: FontWeight.normal,color: Colors.black,)
                     ],
                   ),
                 ),
@@ -46,18 +46,18 @@ class YourEmail extends StatelessWidget {
                    
                   Padding(
                     padding: const EdgeInsets.only(left: 30.0),
-                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmGHJBvdL1deZTRBcf5rARsAKKc0xdECTVje3CKy23jdAb2JQQcGGX2CrfobCG8LHk8k8&usqp=CAU",height: 100.0,width: 100.0,),
+                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmGHJBvdL1deZTRBcf5rARsAKKc0xdECTVje3CKy23jdAb2JQQcGGX2CrfobCG8LHk8k8&usqp=CAU",height: 80.0,width: 80.0,),
                   ),
                 ],
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0,top: 20.0),
-                child: CustomText(text: "What's your email?",fontsize: 30.0,fontweight: FontWeight.bold,),
+                child: CustomText(text: "What's your email?",fontsize: 18.0,fontweight: FontWeight.bold,),
         
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0,top: 25.0),
-                child: CustomText(text: "We'll check if you have an account",fontsize: 18.0,),
+                child: CustomText(text: "We'll check if you have an account",fontsize: 15.0,),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0,right: 20.0,top: 30.0),
@@ -65,6 +65,7 @@ class YourEmail extends StatelessWidget {
                   cursorColor: Color(0xffDF486F,),
                   decoration: InputDecoration(
                     labelText: "Email",
+                    labelStyle: TextStyle(color: Colors.black45),
                     border: OutlineInputBorder(),
                               focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black)
@@ -76,7 +77,7 @@ class YourEmail extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 360.0,left: 10.0,right: 10.0),
                 child: Container(
-                  child: Center(child: CustomText(text: "Continue",fontsize: 20.0,fontweight: FontWeight.bold,color: Colors.white,)),
+                  child: Center(child: CustomText(text: "Continue",fontsize: 18.0,fontweight: FontWeight.bold,color: Colors.white,)),
                  height: 60.0,width: 450.0,
                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(10.0),
                    color: Colors.grey[400],

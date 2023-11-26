@@ -15,39 +15,41 @@ class TermCondition extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 70.0,
           backgroundColor: Colors.white,
-          title: Column(
-            children: [
-              Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>FirstPage()));
-                    },
-                    child: CustomIcons(icon: Icons.arrow_back,size: 30.0,color: Color(0xffDF486F,),)),
-                  SizedBox(width: 30.0,),
-                  CustomText(text: "More",fontsize: 20.0,fontweight: FontWeight.bold,color: Colors.black,)
-                ],
-              ),
-            ],
-          ),
+          leading: InkWell(
+             onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>FirstPage()));
+                },
+            child: CustomIcons(icon: Icons.arrow_back,size: 25.0,color: Color(0xffe31b70),)),
+          title: CustomText(text: "More",fontsize: 18.0,fontweight: FontWeight.bold,color: Colors.black,),
+         
+          // title: Row(
+          //   mainAxisAlignment: MainAxisAlignment.start,
+          //   children: [
+          //     InkWell(
+          //      
+          //       child: CustomIcons(icon: Icons.)),
+          //     SizedBox(width: 10.0,),
+          //     CustomText(text: )
+          //   ],
+          // ),
     
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 40.0,),
+            SizedBox(height: 25.0,),
             Padding(
               padding: const EdgeInsets.only(left: 35.0),
-              child: CustomText(text: "Term & conditions",fontsize: 20.0,),
+              child: CustomText(text: "Term & conditions",fontsize: 16.0,),
             ),
-            SizedBox(height: 20.0,),
+            SizedBox(height: 15.0,),
             Divider(color: Colors.grey,thickness: 0.0,),
-             SizedBox(height: 40.0,),
+             SizedBox(height: 25.0,),
             Padding(
               padding: const EdgeInsets.only(left: 35.0),
-              child: CustomText(text: "Data policy",fontsize: 20.0,),
+              child: CustomText(text: "Data policy",fontsize: 16.0,),
             ),
-            SizedBox(height: 20.0,),
+            SizedBox(height: 15.0,),
             Divider(color: Colors.grey,thickness: 0.0,),
     
           ],

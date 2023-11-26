@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:food_panda/custom_icons.dart';
 import 'package:food_panda/custom_text.dart';
+import 'package:food_panda/heart_broken_screen.dart';
+import 'package:food_panda/invite_friends.dart';
+import 'package:food_panda/pickup_restaurant.dart';
 import 'package:food_panda/search_screen.dart';
+import 'package:food_panda/shopping_bag_screen.dart';
+import 'package:food_panda/your_favourite.dart';
 
 import 'custom_images.dart';
+import 'daily_deal.dart';
 import 'first_page.dart';
+import 'pick_up.dart';
 
 
 
@@ -22,59 +29,72 @@ class FoodDelivery extends StatelessWidget {
           child: Column(
            children: [
             Padding(
-              padding: const EdgeInsets.only(left: 20,top: 30,right: 20),
+              padding: const EdgeInsets.only(left: 20,top: 10,right: 20),
               child: Row(
                 children: [
                     InkWell(
                       onTap: () {
                         Navigator.push(context,MaterialPageRoute(builder: (context)=> FirstPage()));
                       },
-                      child: CustomIcons(icon: Icons.arrow_back,color: Color(0xffDF486F),size: 30.0,)),
+                      child: CustomIcons(icon: Icons.arrow_back,color: Color(0xffe31b70),size: 25.0,)),
                     SizedBox(width: 15,),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                        children: [
                     
-                    CustomText(text: "14 B2 Lahore",fontsize: 20.0,fontweight: FontWeight.bold,),
-                    SizedBox(height: 10,),
-                    CustomText(text: "Food delivery",fontsize: 15.0,)
+                    CustomText(text: "14 B2 Lahore",fontsize: 18.0,fontweight: FontWeight.bold,),
+                    SizedBox(height: 5,),
+                    CustomText(text: "Food delivery",fontsize: 14.0,)
                   ],
                   ),
                   Spacer(),
-                  CustomIcons(icon: Icons.heart_broken_outlined,color: Color(0xffDF486F),size: 30.0,),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=> HeartBroken()));
+                    },
+                    child: CustomIcons(icon: Icons.favorite_border_outlined,color: Color(0xffe31b70),size: 20.0,)),
                   SizedBox(width: 20,),
-                  CustomIcons(icon: Icons.shopping_bag_outlined,color: Color(0xffDF486F),size: 30.0,),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=> ShoppingBag()));
+                    },
+                    child: CustomIcons(icon: Icons.shopping_bag_outlined,color: Color(0xffe31b70),size: 20.0,)),
                 ],
               ),
             ),
             InkWell(
               child: Padding(
-                padding: const EdgeInsets.only(left: 20,top: 30),
+                padding: const EdgeInsets.only(left: 20,top: 15),
                 child: Row(
                   children: [
                     SingleChildScrollView(
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
+                       height: 35,width: 290,
                         decoration: BoxDecoration(
                             
                           color: Colors.grey[300],
                           borderRadius: BorderRadius.all(Radius.circular(25.0)),
                         ),
-                          child: Row(
-                            children: [
-                              CustomIcons(
-                    
-                                icon: Icons.search,
-                                size: 30.0,
-                              ),
-                              SizedBox(width: 5.0,),
-                              Text("Search for shops & restaurants",style: TextStyle(fontSize: 15.0),)
-                            ],
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 15),
+                            child: Row(
+                             
+                              children: [
+                                CustomIcons(
+                                  
+                                              
+                                  icon: Icons.search,
+                                  size: 20.0,
+                                ),
+                                SizedBox(width: 15.0,),
+                                Text("Search for shops & restaurants",style: TextStyle(fontSize: 15.0),)
+                              ],
+                            ),
                           )
                       ),
                     ),
-                   SizedBox(width: 60,),
-                    CustomIcons(icon: Icons.waves_outlined,color: Color(0xffDF486F),size: 25.0,)
+                  SizedBox(width: 15,),
+                    CustomIcons(icon: Icons.waves_outlined,color: Color(0xffe31b70),size: 20.0,)
                   ],
                 ),
               ),
@@ -88,7 +108,7 @@ class FoodDelivery extends StatelessWidget {
         
         
               Padding(
-               padding: const EdgeInsets.only(left: 20,top: 20),
+               padding: const EdgeInsets.only(left: 20,top: 20,right: 20),
                child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                  child: Row(
@@ -96,7 +116,11 @@ class FoodDelivery extends StatelessWidget {
                      Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=> DailyDeal()));
+                          },
+                          child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,)),
                           SizedBox(height: 5,),
                         
                       ]
@@ -106,7 +130,11 @@ class FoodDelivery extends StatelessWidget {
                       Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=> DailyDeal()));
+                          },
+                          child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,)),
                           SizedBox(height: 5,),
                
                          
@@ -118,7 +146,11 @@ class FoodDelivery extends StatelessWidget {
                       Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=> DailyDeal()));
+                          },
+                          child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,)),
                         SizedBox(height: 5,),
                
                       ]
@@ -128,7 +160,11 @@ class FoodDelivery extends StatelessWidget {
                       Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=> DailyDeal()));
+                          },
+                          child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,)),
                         SizedBox(height: 5,),
                
                       ]
@@ -138,7 +174,11 @@ class FoodDelivery extends StatelessWidget {
                       Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=> DailyDeal()));
+                          },
+                          child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7Px7_DgGJxbZ-1OC3POoU8Waua5x_ogOzg&usqp=CAU",height: 200.0,width: 120.0,)),
                         SizedBox(height: 5,),
                
                       ]
@@ -154,11 +194,11 @@ class FoodDelivery extends StatelessWidget {
         
               SizedBox(height: 30,),
               Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
+                padding: const EdgeInsets.only(left: 20,top: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                   CustomText(text: "Your Favourite cuisines",fontsize: 22.0,fontweight: FontWeight.bold,),
+                   CustomText(text: "Your Favourite cuisines",fontsize: 18.0,fontweight: FontWeight.bold,),
                 ],
                 ),
               ),
@@ -172,9 +212,13 @@ class FoodDelivery extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 20,top: 20),
                         child: Column(
                                 children: [
-                                  CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,),
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Your()));
+                                    },
+                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,)),
                                   SizedBox(height: 10,),
-                                  CustomText(text: "Biryani",fontsize: 20.0,fontweight: FontWeight.bold,)
+                                  CustomText(text: "Biryani",fontsize: 15.0,fontweight: FontWeight.bold,)
                                 ],
                               ),
                       ),
@@ -183,9 +227,13 @@ class FoodDelivery extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 20),
                         child: Column(
                                 children: [
-                                  CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,),
+                                  InkWell(
+                                      onTap: () {
+                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Your()));
+                                    },
+                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,)),
                                   SizedBox(height: 10,),
-                                  CustomText(text: "Biryani",fontsize: 20.0,fontweight: FontWeight.bold,)
+                                  CustomText(text: "Biryani",fontsize: 15.0,fontweight: FontWeight.bold,)
                                 ],
                               ),
                       ),
@@ -194,9 +242,13 @@ class FoodDelivery extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 20),
                         child: Column(
                                 children: [
-                                  CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,),
+                                  InkWell(
+                                      onTap: () {
+                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Your()));
+                                    },
+                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,)),
                                   SizedBox(height: 10,),
-                                  CustomText(text: "Biryani",fontsize: 20.0,fontweight: FontWeight.bold,)
+                                  CustomText(text: "Biryani",fontsize: 15.0,fontweight: FontWeight.bold,)
                                 ],
                               ),
                       ),
@@ -205,9 +257,13 @@ class FoodDelivery extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 20),
                         child: Column(
                                 children: [
-                                  CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,),
+                                  InkWell(
+                                      onTap: () {
+                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Your()));
+                                    },
+                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,)),
                                   SizedBox(height: 10,),
-                                  CustomText(text: "Biryani",fontsize: 20.0,fontweight: FontWeight.bold,)
+                                  CustomText(text: "Biryani",fontsize: 15.0,fontweight: FontWeight.bold,)
                                 ],
                               ),
                       ),
@@ -216,118 +272,383 @@ class FoodDelivery extends StatelessWidget {
                         padding: const EdgeInsets.only( top: 20),
                         child: Column(
                                 children: [
-                                  CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,),
+                                  InkWell(
+                                      onTap: () {
+                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Your()));
+                                    },
+                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVxYGPWuHgSXC6r_qFQNFKXc-wevsyqwjSsA&usqp=CAU",height: 100.0,width: 100.0,)),
                                   SizedBox(height: 10,),
-                                  CustomText(text: "Biryani",fontsize: 20.0,fontweight: FontWeight.bold,)
+                                  CustomText(text: "Biryani",fontsize: 15.0,fontweight: FontWeight.bold,)
                                 ],
                               ),
+                              
                       ),
+                       SizedBox(width: 20,),
                       
                     ],
                   ),
                 ),
         
         
-          SizedBox(height: 30,),
+         
               Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
+                padding: const EdgeInsets.only(left: 20,top: 40),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                   CustomText(text: "Strong Pepsi Deails!",fontsize: 22.0,fontweight: FontWeight.bold,),
+                   CustomText(text: "Strong Pepsi Deails!",fontsize: 18.0,fontweight: FontWeight.bold,),
                 ],
                 ),
               ),
-                Padding(
-               padding: const EdgeInsets.only(left: 20,top: 20),
-               child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                 child: Row(
-                   children: [
-                     Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_TRe-XuQmXyOCy4iIAE5eFNJIDug8o-9ytg&usqp=CAU",height: 200.0,width: 250.0,),
-                          SizedBox(height: 5,),
+
+
+
+                                  SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(20),
+                                      child: Row(
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(
+                                                      
+                                                children: [
+                                                  
+                                                  InkWell(
+                                                      onTap: () {
+                                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                    },
+                                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 180.0,
+                                                              width: 260.0,),
+                                                  ),
+                                                            Positioned(
+                                                              top: 10,
+                                                              child: Row(
+                                                                children: [
+                                                                  Container(
+                                                                    child: Center(child: CustomText(text: "Featured",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                        height: 25,width: 80,
+                                                                        
+                                                                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                            
+                                                                      ),
+                                                                     
+                                                                ],
+                                                              ),
+                                                            ),
+                                                             Positioned(
+                                                              top: 46,
+                                                               child: Container(
+                                                                      child: Center(child: CustomText(text: "20% off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 25,width: 70,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                     
+                                                                        ),
+                                                             ),
+                                                           Positioned(
+                                                      
+                                                            bottom:10,
+                                                            left: 10,
+                                                            
+                                                             child: Container(
+                                                              
+                                                              child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                             
+                                                              height: 30,width: 65,
+                                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                              color: Colors.grey[300]),
+                                                             ),
+                                                           )
+                                                ],
+                                              ),
+                                                SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Subway-Allama iqbal...",
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "&&&.Sandwiches",
+                                                    fontsize: 15.0,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Free delivery",color: Color(0xffe31b70),
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ), SizedBox(width: 20,),
+                                              
+                                            ],
+                                          ),
+                                          SizedBox(width: 10,),
+                                           Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(
+                                                      
+                                                children: [
+                                                  
+                                                  InkWell(
+                                                      onTap: () {
+                                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                    },
+                                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 180.0,
+                                                              width: 260.0,),
+                                                  ),
+                                                            Positioned(
+                                                              top: 10,
+                                                              child: Row(
+                                                                children: [
+                                                                  Container(
+                                                                    child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                        height: 25,width: 90,
+                                                                        
+                                                                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                            
+                                                                      ),
+                                                                     
+                                                                ],
+                                                              ),
+                                                            ),
+                                                             Positioned(
+                                                              top: 46,
+                                                               child: Container(
+                                                                      child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 30,width: 200,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                     
+                                                                        ),
+                                                             ),
+                                                           Positioned(
+                                                      
+                                                            bottom:10,
+                                                            left: 10,
+                                                            
+                                                             child: Container(
+                                                              
+                                                              child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                             
+                                                              height: 30,width: 65,
+                                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                              color: Colors.grey[300]),
+                                                             ),
+                                                           )
+                                                ],
+                                              ),
+                                                SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Subway-Allama iqbal...",
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "&&&.Sandwiches",
+                                                    fontsize: 15.0,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Free delivery",color: Color(0xffe31b70),
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ), SizedBox(width: 20,),
+                                              
+                                            ],
+                                          ),
+                                           SizedBox(width: 10,),
+                                           Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(
+                                                      
+                                                children: [
+                                                  
+                                                  InkWell(
+                                                      onTap: () {
+                                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                    },
+                                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 180.0,
+                                                              width: 260.0,),
+                                                  ),
+                                                            Positioned(
+                                                              top: 10,
+                                                              child: Row(
+                                                                children: [
+                                                                  Container(
+                                                                    child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                        height: 25,width: 90,
+                                                                        
+                                                                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                            
+                                                                      ),
+                                                                    
+                                                                ],
+                                                              ),
+                                                            ),
+                                                             Positioned(
+                                                              top: 46,
+                                                               child: Container(
+                                                                      child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 30,width: 200,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                     
+                                                                        ),
+                                                             ),
+                                                           Positioned(
+                                                      
+                                                            bottom:10,
+                                                            left: 10,
+                                                            
+                                                             child: Container(
+                                                              
+                                                              child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                             
+                                                              height: 30,width: 65,
+                                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                              color: Colors.grey[300]),
+                                                             ),
+                                                           )
+                                                ],
+                                              ),
+                                                SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Subway-Allama iqbal...",
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "&&&.Sandwiches",
+                                                    fontsize: 15.0,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Free delivery",color: Color(0xffe31b70),
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ), SizedBox(width: 20,),
+                                              
+                                            ],
+                                          ),
+                                           SizedBox(width: 10,),
+                                           Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(
+                                                      
+                                                children: [
+                                                  
+                                                  InkWell(
+                                                      onTap: () {
+                                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                    },
+                                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTadP7ECfo-4uEvi7t4EntZk9W06b7bfntRKA&usqp=CAU", height: 180.0,
+                                                              width: 260.0,),
+                                                  ),
+                                                            Positioned(
+                                                              top: 10,
+                                                              child: Row(
+                                                                children: [
+                                                                  Container(
+                                                                    child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                        height: 25,width: 90,
+                                                                        
+                                                                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                            
+                                                                      ),
+                                                                      SizedBox(width: 130,),
+                                                                      
+                                                                ],
+                                                              ),
+                                                            ),
+                                                             Positioned(
+                                                              top: 46,
+                                                               child: Container(
+                                                                      child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 30,width: 200,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                     
+                                                                        ),
+                                                             ),
+                                                           Positioned(
+                                                      
+                                                            bottom:10,
+                                                            left: 10,
+                                                            
+                                                             child: Container(
+                                                              
+                                                              child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                             
+                                                              height: 30,width: 65,
+                                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                              color: Colors.grey[300]),
+                                                             ),
+                                                           )
+                                                ],
+                                              ),
+                                                SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Subway-Allama iqbal...",
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "&&&.Sandwiches",
+                                                    fontsize: 15.0,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Free delivery",color: Color(0xffe31b70),
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ), SizedBox(width: 20,),
+                                              
+                                            ],
+                                          ),
+                                          
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  
                
-                          CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Sandwiches",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-                         
-                     ),
-                     SizedBox(width: 10,),
-                      Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_TRe-XuQmXyOCy4iIAE5eFNJIDug8o-9ytg&usqp=CAU",height: 200.0,width: 250.0,),
-                          SizedBox(height: 5,),
-               
-                           CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Sandwiches",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-                         
-                     ),
-                      SizedBox(width: 10,),
-                      Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_TRe-XuQmXyOCy4iIAE5eFNJIDug8o-9ytg&usqp=CAU",height: 200.0,width: 250.0,),
-                        SizedBox(height: 5,),
-               
-                         CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Sandwiches",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-                         
-                     ),
-                      SizedBox(width: 10,),
-                      Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_TRe-XuQmXyOCy4iIAE5eFNJIDug8o-9ytg&usqp=CAU",height: 200.0,width: 250.0,),
-                        SizedBox(height: 5,),
-               
-                         CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Sandwiches",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-                         
-                     ),
-                      SizedBox(width: 10,),
-                      Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_TRe-XuQmXyOCy4iIAE5eFNJIDug8o-9ytg&usqp=CAU",height: 200.0,width: 250.0,),
-                        SizedBox(height: 5,),
-               
-                         CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Sandwiches",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-                         
-                     ),
-                     
-                   ],
-                 ),
-               ),
-             ),
+              
+
+
+
+          
     
               SizedBox(height: 30,),
               Padding(
@@ -335,313 +656,763 @@ class FoodDelivery extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                   CustomText(text: "Cricket deals & discounts",fontsize: 22.0,fontweight: FontWeight.bold,),
+                   CustomText(text: "Cricket deals & discounts",fontsize: 18.0,fontweight: FontWeight.bold,),
                 ],
                 ),
+              ),
+
+
+
+
+               SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(20),
+                                      child: Row(
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(
+                                                      
+                                                children: [
+                                                  
+                                                  InkWell(
+                                                      onTap: () {
+                                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                    },
+                                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU", height: 180.0,
+                                                              width: 260.0,),
+                                                  ),
+                                                            Positioned(
+                                                              top: 10,
+                                                              child: Row(
+                                                                children: [
+                                                                  Container(
+                                                                    child: Center(child: CustomText(text: "Featured",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                        height: 25,width: 80,
+                                                                        
+                                                                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                            
+                                                                      ),
+                                                                     
+                                                                      
+                                                                ],
+                                                              ),
+                                                            ),
+                                                             Positioned(
+                                                              top: 46,
+                                                               child: Container(
+                                                                      child: Center(child: CustomText(text: "20% off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 25,width: 70,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                     
+                                                                        ),
+                                                             ),
+                                                           Positioned(
+                                                      
+                                                            bottom:10,
+                                                            left: 10,
+                                                            
+                                                             child: Container(
+                                                              
+                                                              child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                             
+                                                              height: 30,width: 65,
+                                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                              color: Colors.grey[300]),
+                                                             ),
+                                                           )
+                                                ],
+                                              ),
+                                                 SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Bannu beef Pulao-Tu....",
+                                                    fontsize: 15.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "&&&.Pulao",
+                                                    fontsize: 15.0,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Free delivery",color: Color(0xffe31b70),
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ), SizedBox(width: 20,),
+                                              
+                                            ],
+                                          ),
+                                            SizedBox(
+                                                    width: 10,
+                                                  ),
+                                           Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(
+                                                      
+                                                children: [
+                                                  
+                                                  InkWell(
+                                                      onTap: () {
+                                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                    },
+                                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU", height: 180.0,
+                                                              width: 260.0,),
+                                                  ),
+                                                            Positioned(
+                                                              top: 10,
+                                                              child: Row(
+                                                                children: [
+                                                                  Container(
+                                                                    child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                        height: 25,width: 90,
+                                                                        
+                                                                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                            
+                                                                      ),
+                                                                     
+                                                                ],
+                                                              ),
+                                                            ),
+                                                             Positioned(
+                                                              top: 46,
+                                                               child: Container(
+                                                                      child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 30,width: 200,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                     
+                                                                        ),
+                                                             ),
+                                                           Positioned(
+                                                      
+                                                            bottom:10,
+                                                            left: 10,
+                                                            
+                                                             child: Container(
+                                                              
+                                                              child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                             
+                                                              height: 30,width: 65,
+                                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                              color: Colors.grey[300]),
+                                                             ),
+                                                           )
+                                                ],
+                                              ),
+                                                SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Bannu beef Pulao-Tu....",
+                                                    fontsize: 15.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "&&&.Pulao",
+                                                    fontsize: 15.0,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Free delivery",color: Color(0xffe31b70),
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ), SizedBox(width: 20,),
+                                              
+                                            ],
+                                          ),
+                                           SizedBox(
+                                                    width: 10,
+                                                  ),
+
+                                           Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(
+                                                      
+                                                children: [
+                                                  
+                                                  InkWell(
+                                                      onTap: () {
+                                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                    },
+                                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU", height: 180.0,
+                                                              width: 260.0,),
+                                                  ),
+                                                            Positioned(
+                                                              top: 10,
+                                                              child: Row(
+                                                                children: [
+                                                                  Container(
+                                                                    child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                        height: 25,width: 90,
+                                                                        
+                                                                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                            
+                                                                      ),
+                                                                     
+                                                                ],
+                                                              ),
+                                                            ),
+                                                             Positioned(
+                                                              top: 46,
+                                                               child: Container(
+                                                                      child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 30,width: 200,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                     
+                                                                        ),
+                                                             ),
+                                                           Positioned(
+                                                      
+                                                            bottom:10,
+                                                            left: 10,
+                                                            
+                                                             child: Container(
+                                                              
+                                                              child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                             
+                                                              height: 30,width: 65,
+                                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                              color: Colors.grey[300]),
+                                                             ),
+                                                           )
+                                                ],
+                                              ),
+                                                SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Bannu beef Pulao-Tu....",
+                                                    fontsize: 15.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "&&&.Pulao",
+                                                    fontsize: 15.0,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Free delivery",color: Color(0xffe31b70),
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ), SizedBox(width: 20,),
+                                              
+                                            ],
+                                          ),
+                                           SizedBox(width: 10,),
+                                           Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(
+                                                      
+                                                children: [
+                                                  
+                                                  InkWell(
+                                                      onTap: () {
+                                                      Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                    },
+                                                    child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU", height: 180.0,
+                                                              width: 260.0,),
+                                                  ),
+                                                            Positioned(
+                                                              top: 10,
+                                                              child: Row(
+                                                                children: [
+                                                                  Container(
+                                                                    child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                        height: 25,width: 90,
+                                                                        
+                                                                        decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                            
+                                                                      ),
+                                                                     
+                                                                ],
+                                                              ),
+                                                            ),
+                                                             Positioned(
+                                                              top: 46,
+                                                               child: Container(
+                                                                      child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 30,width: 200,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                     
+                                                                        ),
+                                                             ),
+                                                           Positioned(
+                                                      
+                                                            bottom:10,
+                                                            left: 10,
+                                                            
+                                                             child: Container(
+                                                              
+                                                              child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                             
+                                                              height: 30,width: 65,
+                                                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                              color: Colors.grey[300]),
+                                                             ),
+                                                           )
+                                                ],
+                                              ),
+                                                SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Bannu beef Pulao-Tu....",
+                                                    fontsize: 15.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "&&&.Pulao",
+                                                    fontsize: 15.0,
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  CustomText(
+                                                    text: "Free delivery",color: Color(0xffe31b70),
+                                                    fontsize: 14.0,
+                                                    fontweight: FontWeight.bold,
+                                                  ), SizedBox(width: 20,),
+                                              
+                                            ],
+                                          ),
+                                          
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+
+
+                                   Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => InviteFriends()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                       borderRadius: BorderRadius.circular(10),
+                       color: Colors.white,
+                        border: Border.all(
+                      color: Color.fromARGB(255, 229, 229, 229),
+                    )),
+                    height: 130,
+                    width: 400,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                          CustomImages(
+                            url:
+                                "https://miro.medium.com/v2/resize:fit:1400/1*u7FtKnh0YEUs9uY1oOR_6g.png",
+                            width: 100.0,height: 65.0,
+                          ),
+                          SizedBox(width: 20,),
+                         
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20, top: 22,right: 20),
+                              child: CustomText(
+                                text: "Refer friends and get",
+                                fontsize: 13.0,
+                                fontweight: FontWeight.bold,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20, top: 5),
+                              child: CustomText(
+                                text: "Rs. 350.00",
+                                fontsize: 13.0,
+                                  fontweight: FontWeight.bold,
+                              ),
+                            ),
+                             Padding(
+                               padding: const EdgeInsets.all(10),
+                               child: Container(
+                               
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Color(0xffe31b70),),
+                                  child: Center(
+                                    child: CustomText(
+                                    text: "Find out how",
+                                    fontsize: 15.0,
+                                    color: Colors.white,
+                                      fontweight: FontWeight.bold,
+                                                                ),
+                                  ),
+                                                       height: 30,width: 110,
+                                                      
+                                                     ),
+                             )
+                          ],
+                        ),
+                       
+
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+               Padding(
+                              padding: const EdgeInsets.only(left: 20, top: 20),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  CustomText(
+                                    text: "All restaurant",
+                                    fontsize: 18.0,
+                                      fontweight: FontWeight.bold,
+                                  ),
+                                ],
+                              ),
+                            ),
+                                  
+           
+              Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Stack(
+                                                        
+                                                  children: [
+                                                    
+                                                    InkWell(
+                                                        onTap: () {
+                                                        Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                      },
+                                                      child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU", height: 180.0,
+                                                                ),
+                                                    ),
+                                                              Positioned(
+                                                                top: 10,
+                                                                child: Row(
+                                                                  children: [
+                                                                    Container(
+                                                                      child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 25,width: 90,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                              
+                                                                        ),
+                                                                      
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                               Positioned(
+                                                                top: 46,
+                                                                 child: Container(
+                                                                        child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                            height: 30,width: 200,
+                                                                            
+                                                                            decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                       
+                                                                          ),
+                                                               ),
+                                                             Positioned(
+                                                        
+                                                              bottom:10,
+                                                              left: 10,
+                                                              
+                                                               child: Container(
+                                                                
+                                                                child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                               
+                                                                height: 30,width: 65,
+                                                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                                color: Colors.grey[300]),
+                                                               ),
+                                                             )
+                                                  ],
+                                                ),
+                                                SizedBox(height: 10,),
+                                                  Row(
+                                  children: [
+                                    CustomText(text: "Subway-Allama iqbal...",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                    Spacer(),
+                                    CustomIcons(icon: Icons.star_border_outlined,size: 20.0,color: Colors.deepOrange,),
+                                    SizedBox(width: 3,),
+                                    CustomText(text: "4.0",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                     SizedBox(width: 3,),
+                                     CustomText(text: "(4000+)",fontsize: 12.0,),
+                                  ],
+                                ),
+                                  SizedBox(height: 5,),
+                              CustomText(text: "&&&.Sandwiches",fontsize: 15.0,),
+                                SizedBox(height: 5,),
+                                CustomText(text: "Free delivery",color: Color(0xffe31b70),fontsize: 15.0,),
+                              
+                                                 
+                                                
+                                              ],
+                                            ),
               ),
                 Padding(
-               padding: const EdgeInsets.only(left: 20,top: 20),
-               child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                 child: Row(
-                   children: [
-                     Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU",height: 200.0,width: 250.0,),
-                          SizedBox(height: 5,),
-               
-                          CustomText(text: "Bannu beef Pulao-Tu...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Pulao",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-                         
-                     ),
-                     SizedBox(width: 10,),
-                      Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                       CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU",height: 200.0,width: 250.0,),
-                          SizedBox(height: 5,),
-               
-                          CustomText(text: "Bannu beef Pulao-Tu...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Pulao",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-                         
-                     ),
-                      SizedBox(width: 10,),
-                      Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU",height: 200.0,width: 250.0,),
-                          SizedBox(height: 5,),
-               
-                          CustomText(text: "Bannu beef Pulao-Tu...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Pulao",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-                         
-                     ),
-                      SizedBox(width: 10,),
-                      Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU",height: 200.0,width: 250.0,),
-                          SizedBox(height: 5,),
-               
-                          CustomText(text: "Bannu beef Pulao-Tu...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Pulao",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-                         
-                     ),
-                      SizedBox(width: 10,),
-                      Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                       CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU",height: 200.0,width: 250.0,),
-                          SizedBox(height: 5,),
-               
-                          CustomText(text: "Bannu beef Pulao-Tu...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                            SizedBox(height: 5,),
-                        CustomText(text: "&&&.Pulao",fontsize: 20.0,),
-                          SizedBox(height: 5,),
-                          CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                        
-                      ]
-    
-                         
-                     ),
-                     
-                   ],
-                 ),
-               ),
-             ),
-             SizedBox(height: 20,),
-             CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbCfq0qlCevZu8-NJvr2czP1aVR0OhBx-jKw&usqp=CAU",),
-    
-    
-    
-        Padding(
-          padding: const EdgeInsets.only(left: 20,right:20 ,top: 20),
-          child: Container(
-            child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1wtt_OmYrV5hS_PmsQgVNQPaJeBTe9M_cvAR4iYkgY0wfkaL4CUYU8hWOjnY8hD7gIGE&usqp=CAU",height: 20.0,width: 20.0,),
-            decoration: BoxDecoration(border: Border.all(color: Colors.grey),
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20)
-            ),
-            height: 150.0,width: 350,
-           
-          ),
-        ),
-        
-    
-    
-         SizedBox(height: 20,),
-              Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                   CustomText(text: "All restaurants",fontsize: 25.0,fontweight: FontWeight.bold,),
-                ],
-                ),
+                padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Stack(
+                                                        
+                                                  children: [
+                                                    
+                                                    InkWell(
+                                                        onTap: () {
+                                                        Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                      },
+                                                      child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU", height: 180.0,
+                                                                ),
+                                                    ),
+                                                              Positioned(
+                                                                top: 10,
+                                                                child: Row(
+                                                                  children: [
+                                                                    Container(
+                                                                      child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 25,width: 90,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                              
+                                                                        ),
+                                                                        
+                                                                        
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                               Positioned(
+                                                                top: 46,
+                                                                 child: Container(
+                                                                        child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                            height: 30,width: 200,
+                                                                            
+                                                                            decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                       
+                                                                          ),
+                                                               ),
+                                                             Positioned(
+                                                        
+                                                              bottom:10,
+                                                              left: 10,
+                                                              
+                                                               child: Container(
+                                                                
+                                                                child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                               
+                                                                height: 30,width: 65,
+                                                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                                color: Colors.grey[300]),
+                                                               ),
+                                                             )
+                                                  ],
+                                                ),
+                                                SizedBox(height: 10,),
+                                                  Row(
+                                  children: [
+                                    CustomText(text: "Subway-Allama iqbal...",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                    Spacer(),
+                                    CustomIcons(icon: Icons.star_border_outlined,size: 20.0,color: Colors.deepOrange,),
+                                    SizedBox(width: 3,),
+                                    CustomText(text: "4.0",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                     SizedBox(width: 3,),
+                                     CustomText(text: "(4000+)",fontsize: 12.0,),
+                                  ],
+                                ),
+                                  SizedBox(height: 5,),
+                              CustomText(text: "&&&.Sandwiches",fontsize: 15.0,),
+                                SizedBox(height: 5,),
+                                CustomText(text: "Free delivery",color: Color(0xffe31b70),fontsize: 15.0,),
+                              
+                                                 
+                                                
+                                              ],
+                                            ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
-                child: Row(
-                  children: [
-                    Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtX70eiamXn75gOtjkM5fTRomvyuIBxzBVpMdIl_RysVer2Xvms4sw8cpgPQU8Z6DJxY&usqp=CAU",width: 350.0,),
-                                SizedBox(height: 5,),
-                     
-                                CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
+                Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Stack(
+                                                        
+                                                  children: [
+                                                    
+                                                    InkWell(
+                                                        onTap: () {
+                                                        Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                      },
+                                                      child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU", height: 180.0,
+                                                                ),
+                                                    ),
+                                                              Positioned(
+                                                                top: 10,
+                                                                child: Row(
+                                                                  children: [
+                                                                    Container(
+                                                                      child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 25,width: 90,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                              
+                                                                        ),
+                                                                       
+                                                                       
+                                                                  ],
+                                                                ),
+                                                              ),
+                                                               Positioned(
+                                                                top: 46,
+                                                                 child: Container(
+                                                                        child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                            height: 30,width: 200,
+                                                                            
+                                                                            decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                       
+                                                                          ),
+                                                               ),
+                                                             Positioned(
+                                                        
+                                                              bottom:10,
+                                                              left: 10,
+                                                              
+                                                               child: Container(
+                                                                
+                                                                child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                               
+                                                                height: 30,width: 65,
+                                                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                                color: Colors.grey[300]),
+                                                               ),
+                                                             )
+                                                  ],
+                                                ),
+                                                SizedBox(height: 10,),
+                                                  Row(
+                                  children: [
+                                    CustomText(text: "Subway-Allama iqbal...",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                    Spacer(),
+                                    CustomIcons(icon: Icons.star_border_outlined,size: 20.0,color: Colors.deepOrange,),
+                                    SizedBox(width: 3,),
+                                    CustomText(text: "4.0",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                     SizedBox(width: 3,),
+                                     CustomText(text: "(4000+)",fontsize: 12.0,),
+                                  ],
+                                ),
                                   SizedBox(height: 5,),
-                              CustomText(text: "&&&.Qorma,Biryani",fontsize: 20.0,),
+                              CustomText(text: "&&&.Sandwiches",fontsize: 15.0,),
                                 SizedBox(height: 5,),
-                                CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
+                                CustomText(text: "Free delivery",color: Color(0xffe31b70),fontsize: 15.0,),
                               
-                            ]
-                               
-                           ),
-                  ],
-                ),
+                                                 
+                                                
+                                              ],
+                                            ),
               ),
-                     SizedBox(width: 20,),
-                      Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
-                child: Row(
-                  children: [
-                    Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtX70eiamXn75gOtjkM5fTRomvyuIBxzBVpMdIl_RysVer2Xvms4sw8cpgPQU8Z6DJxY&usqp=CAU",width: 350.0,),
-                                SizedBox(height: 5,),
-                     
-                                CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
+                Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+                child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Stack(
+                                                        
+                                                  children: [
+                                                    
+                                                    InkWell(
+                                                        onTap: () {
+                                                        Navigator.push(context,MaterialPageRoute(builder: (context)=> Restaurant()));
+                                                      },
+                                                      child: CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mNEDFhEk1m4-8PphRJYdgNs_kRPSbM1ing&usqp=CAU", height: 180.0,
+                                                                ),
+                                                    ),
+                                                              Positioned(
+                                                                top: 10,
+                                                                child: Row(
+                                                                  children: [
+                                                                    Container(
+                                                                      child: Center(child: CustomText(text: "Rs. 100 off",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                          height: 25,width: 90,
+                                                                          
+                                                                          decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                              
+                                                                        ),
+                                                                      
+                                                                  ],
+                                                                ), 
+                                                              ),
+                                                               Positioned(
+                                                                top: 46,
+                                                                 child: Container(
+                                                                        child: Center(child: CustomText(text: "Welcome gift: free delivery",fontweight: FontWeight.bold,color: Colors.white,)),
+                                                                            height: 30,width: 200,
+                                                                            
+                                                                            decoration: BoxDecoration(borderRadius: BorderRadius.only(topRight: Radius.circular(100),bottomRight: Radius.circular(100),),color: Color(0xffe31b70),),
+                                                                                                       
+                                                                          ),
+                                                               ),
+                                                             Positioned(
+                                                        
+                                                              bottom:10,
+                                                              left: 10,
+                                                              
+                                                               child: Container(
+                                                                
+                                                                child: Center(child: CustomText(text: "53 min",fontweight: FontWeight.bold,)),
+                                                               
+                                                                height: 30,width: 65,
+                                                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+                                                                color: Colors.grey[300]),
+                                                               ),
+                                                             )
+                                                  ],
+                                                ),
+                                                SizedBox(height: 10,),
+                                                  Row(
+                                  children: [
+                                    CustomText(text: "Subway-Allama iqbal...",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                    Spacer(),
+                                    CustomIcons(icon: Icons.star_border_outlined,size: 20.0,color: Colors.deepOrange,),
+                                    SizedBox(width: 3,),
+                                    CustomText(text: "4.0",fontsize: 15.0,fontweight: FontWeight.bold,),
+                                     SizedBox(width: 3,),
+                                     CustomText(text: "(4000+)",fontsize: 12.0,),
+                                  ],
+                                ),
                                   SizedBox(height: 5,),
-                              CustomText(text: "&&&.Qorma,Biryani",fontsize: 20.0,),
+                              CustomText(text: "&&&.Sandwiches",fontsize: 15.0,),
                                 SizedBox(height: 5,),
-                                CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
+                                CustomText(text: "Free delivery",color: Color(0xffe31b70),fontsize: 15.0,),
                               
-                            ]
-                               
-                           ),
-                  ],
-                ),
-              ), 
-                 SizedBox(width: 20,),
-                      Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
-                child: Row(
-                  children: [
-                    Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtX70eiamXn75gOtjkM5fTRomvyuIBxzBVpMdIl_RysVer2Xvms4sw8cpgPQU8Z6DJxY&usqp=CAU",width: 350.0,),
-                                SizedBox(height: 5,),
-                     
-                                CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 5,),
-                              CustomText(text: "&&&.Qorma,Biryani",fontsize: 20.0,),
-                                SizedBox(height: 5,),
-                                CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                              
-                            ]
-                               
-                           ),
-                  ],
-                ),
-              ),
-                 SizedBox(width: 20,),
-                      Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
-                child: Row(
-                  children: [
-                    Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtX70eiamXn75gOtjkM5fTRomvyuIBxzBVpMdIl_RysVer2Xvms4sw8cpgPQU8Z6DJxY&usqp=CAU",width: 350.0,),
-                                SizedBox(height: 5,),
-                     
-                                CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 5,),
-                              CustomText(text: "&&&.Qorma,Biryani",fontsize: 20.0,),
-                                SizedBox(height: 5,),
-                                CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                              
-                            ]
-                               
-                           ),
-                  ],
-                ),
-              ),
-                 SizedBox(width: 20,),
-                      Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
-                child: Row(
-                  children: [
-                    Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtX70eiamXn75gOtjkM5fTRomvyuIBxzBVpMdIl_RysVer2Xvms4sw8cpgPQU8Z6DJxY&usqp=CAU",width: 350.0,),
-                                SizedBox(height: 5,),
-                     
-                                CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 5,),
-                              CustomText(text: "&&&.Qorma,Biryani",fontsize: 20.0,),
-                                SizedBox(height: 5,),
-                                CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                              
-                            ]
-                               
-                           ),
-                  ],
-                ),
-              ),
-                 SizedBox(width: 20,),
-                      Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
-                child: Row(
-                  children: [
-                    Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtX70eiamXn75gOtjkM5fTRomvyuIBxzBVpMdIl_RysVer2Xvms4sw8cpgPQU8Z6DJxY&usqp=CAU",width: 350.0,),
-                                SizedBox(height: 5,),
-                     
-                                CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 5,),
-                              CustomText(text: "&&&.Qorma,Biryani",fontsize: 20.0,),
-                                SizedBox(height: 5,),
-                                CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                              
-                            ]
-                               
-                           ),
-                  ],
-                ),
-              ),
-                 SizedBox(width: 20,),
-                      Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
-                child: Row(
-                  children: [
-                    Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtX70eiamXn75gOtjkM5fTRomvyuIBxzBVpMdIl_RysVer2Xvms4sw8cpgPQU8Z6DJxY&usqp=CAU",width: 350.0,),
-                                SizedBox(height: 5,),
-                     
-                                CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 5,),
-                              CustomText(text: "&&&.Qorma,Biryani",fontsize: 20.0,),
-                                SizedBox(height: 5,),
-                                CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                              
-                            ]
-                               
-                           ),
-                  ],
-                ),
-              ),
-                 SizedBox(width: 20,),
-                      Padding(
-                padding: const EdgeInsets.only(left: 20,top: 20),
-                child: Row(
-                  children: [
-                    Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CustomImages(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWtX70eiamXn75gOtjkM5fTRomvyuIBxzBVpMdIl_RysVer2Xvms4sw8cpgPQU8Z6DJxY&usqp=CAU",width: 350.0,),
-                                SizedBox(height: 5,),
-                     
-                                CustomText(text: "Subway-Allama iqbal...",fontsize: 20.0,fontweight: FontWeight.bold,),
-                                  SizedBox(height: 5,),
-                              CustomText(text: "&&&.Qorma,Biryani",fontsize: 20.0,),
-                                SizedBox(height: 5,),
-                                CustomText(text: "Free delivery",color: Color(0xffDF486F),fontsize: 20.0,),
-                              
-                            ]
-                               
-                           ),
-                  ],
-                ),
+                                                 
+                                                
+                                              ],
+                                            ),
               ),
               SizedBox(height: 20,)
         
