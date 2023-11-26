@@ -1536,7 +1536,8 @@ class FirstPage extends StatelessWidget {
                               onTap: () {
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>Restaurant()));
                             },
-                             child: Container(
+                             child: 
+                             Container(
                                child: Column(
                                  
                                  crossAxisAlignment: CrossAxisAlignment.start,
